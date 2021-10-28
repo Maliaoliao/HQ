@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 /**
  * 岗位信息 数据层
  *
- * @author ruoyi
+ * @author mall
  */
 @Repository
 public interface SysPostMapper {

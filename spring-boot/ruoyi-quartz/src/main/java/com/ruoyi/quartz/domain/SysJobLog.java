@@ -10,7 +10,7 @@ import com.ruoyi.common.core.domain.BaseEntity;
 /**
  * 定时任务调度日志表 sys_job_log
  *
- * @author ruoyi
+ * @author mall
  */
 public class SysJobLog extends BaseEntity {
     private static final long serialVersionUID = 1L;

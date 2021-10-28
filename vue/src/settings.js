@@ -1,5 +1,5 @@
 module.exports = {
-  title: '物美智能',
+  title: '吉客后台',
 
   /**
    * 侧边栏主题 深色主题theme-dark，浅色主题theme-light
@@ -24,7 +24,7 @@ module.exports = {
   /**
    * 是否显示logo
    */
-  sidebarLogo: true,
+  sidebarLogo: false,
 
   /**
    * @type {string | array} 'production' | ['production', 'development']

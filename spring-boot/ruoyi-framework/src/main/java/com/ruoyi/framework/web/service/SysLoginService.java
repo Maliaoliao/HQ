@@ -38,7 +38,7 @@ import java.util.Map;
 /**
  * 登录校验方法
  *
- * @author ruoyi
+ * @author mall
  */
 @Component
 public class SysLoginService {

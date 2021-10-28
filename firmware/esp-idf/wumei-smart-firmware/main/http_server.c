@@ -220,7 +220,7 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
     }
 
     /* Send HTML file header */
-    httpd_resp_sendstr_chunk(req, "<!DOCTYPE html><html><meta charset=""utf-8""><meta name=""viewport"" content=""width=device-width,initial-scale=1""><title>物美智能设备AP配置</title><body>");
+    httpd_resp_sendstr_chunk(req, "<!DOCTYPE html><html><meta charset=""utf-8""><meta name=""viewport"" content=""width=device-width,initial-scale=1""><title>吉客后台设备AP配置</title><body>");
 
     /* Get handle to embedded file upload script */
     extern const unsigned char upload_script_start[] asm("_binary_upload_script_html_start");

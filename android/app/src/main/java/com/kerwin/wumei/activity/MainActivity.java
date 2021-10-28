@@ -208,7 +208,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         // 绑定数据
         ivAvatar.setImageResource(R.drawable.ic_default_head);
         tvAvatar.setText("匿名用户");
-        tvSign.setText("物美智能点亮智慧生活...");
+        tvSign.setText("吉客后台点亮智慧生活...");
         getUserInfo(tvAvatar,tvSign );
         navHeader.setOnClickListener(this);
     }
@@ -362,7 +362,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         }else{
                             avatar.setText(user.getUserName());
                         }
-                        sign.setText("物美智能开源项目(wumei-smart)");
+                        sign.setText("吉客后台开源项目(wumei-smart)");
                     }
                     @Override
                     public void onError(ApiException e) {

@@ -10,7 +10,7 @@ import com.ruoyi.common.utils.html.EscapeUtil;
 /**
  * 获取IP方法
  *
- * @author ruoyi
+ * @author mall
  */
 public class IpUtils {
     public static String getIpAddr(HttpServletRequest request) {

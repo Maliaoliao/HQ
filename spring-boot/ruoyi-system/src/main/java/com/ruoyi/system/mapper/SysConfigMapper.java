@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 /**
  * 参数配置 数据层
  *
- * @author ruoyi
+ * @author mall
  */
 @Repository
 public interface SysConfigMapper {

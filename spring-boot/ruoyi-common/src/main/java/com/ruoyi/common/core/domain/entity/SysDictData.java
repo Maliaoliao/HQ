@@ -13,7 +13,7 @@ import com.ruoyi.common.core.domain.BaseEntity;
 /**
  * 字典数据表 sys_dict_data
  *
- * @author ruoyi
+ * @author mall
  */
 public class SysDictData extends BaseEntity {
     private static final long serialVersionUID = 1L;

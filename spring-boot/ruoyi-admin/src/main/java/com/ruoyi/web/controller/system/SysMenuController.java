@@ -30,7 +30,7 @@ import com.ruoyi.system.service.ISysMenuService;
 /**
  * 菜单信息
  *
- * @author ruoyi
+ * @author mall
  */
 @RestController
 @RequestMapping("/system/menu")

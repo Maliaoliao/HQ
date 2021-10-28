@@ -22,7 +22,7 @@ import com.ruoyi.common.utils.sql.SqlUtil;
 /**
  * web层通用数据处理
  *
- * @author ruoyi
+ * @author mall
  */
 public class BaseController {
     protected final Logger logger = LoggerFactory.getLogger(BaseController.class);

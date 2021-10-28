@@ -24,7 +24,7 @@ import com.ruoyi.common.constant.Constants;
 /**
  * 通用http发送方法
  *
- * @author ruoyi
+ * @author mall
  */
 public class HttpUtils {
     private static final Logger log = LoggerFactory.getLogger(HttpUtils.class);

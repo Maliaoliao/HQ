@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 微信小程序用户登录对象
  *
- * @author ruoyi
+ * @author mall
  */
 @Data
 public class MpLoginBody {

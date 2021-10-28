@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 /**
  * 字典表 数据层
  *
- * @author ruoyi
+ * @author mall
  */
 @Repository
 public interface SysDictDataMapper {

@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      title: '物美智能',
+      title: '吉客后台',
       logo: logoImg
     }
   }

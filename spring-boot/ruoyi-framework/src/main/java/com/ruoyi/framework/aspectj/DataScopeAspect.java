@@ -22,7 +22,7 @@ import com.ruoyi.framework.web.service.TokenService;
 /**
  * 数据过滤处理
  *
- * @author ruoyi
+ * @author mall
  */
 @Aspect
 @Component

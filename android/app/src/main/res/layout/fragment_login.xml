@@ -148,7 +148,7 @@
             <TextView
                 style="@style/TextStyle.Explain"
                 android:layout_width="wrap_content"
-                android:text="物美智能(wumei-smart) - 快速搭建自己的智能家居系统"
+                android:text="吉客后台(wumei-smart) - 快速搭建自己的智能家居系统"
                 android:textColor="@color/xui_config_color_primary_text" />
 
         </LinearLayout>

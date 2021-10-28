@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">物美智能</string>
+    <string name="app_name">吉客后台</string>
     <string name="app_browser_name">通用浏览器</string>
     <string name="service_api_key">service_api_key</string>
     <string name="default_service_api">http://wumei.live</string>

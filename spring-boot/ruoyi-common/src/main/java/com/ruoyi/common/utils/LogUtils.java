@@ -3,7 +3,7 @@ package com.ruoyi.common.utils;
 /**
  * 处理并记录日志文件
  *
- * @author ruoyi
+ * @author mall
  */
 public class LogUtils {
     public static String getBlock(Object msg) {

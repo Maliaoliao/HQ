@@ -8,7 +8,7 @@ import com.ruoyi.common.core.domain.entity.SysRole;
 /**
  * 角色业务层
  *
- * @author ruoyi
+ * @author mall
  */
 public interface ISysRoleService {
     /**

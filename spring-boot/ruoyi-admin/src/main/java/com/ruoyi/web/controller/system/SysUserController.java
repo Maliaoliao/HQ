@@ -38,7 +38,7 @@ import com.ruoyi.system.service.ISysUserService;
 /**
  * 用户信息
  *
- * @author ruoyi
+ * @author mall
  */
 @Api(value = "用户管理", tags = "用户管理")
 @RestController

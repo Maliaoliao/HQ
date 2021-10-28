@@ -25,7 +25,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * Swagger2的接口配置
  *
- * @author ruoyi
+ * @author mall
  */
 @Configuration
 @EnableSwagger2
@@ -114,7 +114,7 @@ public class SwaggerConfig {
         // 用ApiInfoBuilder进行定制
         return new ApiInfoBuilder()
                 // 设置标题
-                .title("标题：物美智能设备_接口文档")
+                .title("标题：吉客后台设备_接口文档")
                 // 描述
                 .description("描述：物联网模块接口")
                 // 作者信息

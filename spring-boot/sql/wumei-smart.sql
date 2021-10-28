@@ -1267,8 +1267,8 @@ CREATE TABLE `sys_user` (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', '103', 'admin', '物美智能', '00', '164770707@qq.com', '15888888888', '1', '', '$2a$10$PXtk.97BgFUAK/7lpmxZ4eNPS6zL0VVHR7g.sjrdG5XUiX7pfGaRa', '0', '0', '127.0.0.1', '2021-05-18 02:23:06', 'admin', '2021-05-18 02:23:06', '', null, '管理员');
-INSERT INTO `sys_user` VALUES ('2', '105', 'wumei', '物美智能', '00', 'admin@wumei.com', '15666666666', '1', '', '$2a$10$uLlHqgW4b5oAqoS81Rhkk.7Tf6wnGvh9FE9V160Dv2Kn9doOrB4qe', '0', '0', '127.0.0.1', '2021-05-18 02:23:06', 'admin', '2021-05-18 02:23:06', 'admin', '2021-06-19 09:31:14', '测试员');
+INSERT INTO `sys_user` VALUES ('1', '103', 'admin', '吉客后台', '00', '164770707@qq.com', '15888888888', '1', '', '$2a$10$PXtk.97BgFUAK/7lpmxZ4eNPS6zL0VVHR7g.sjrdG5XUiX7pfGaRa', '0', '0', '127.0.0.1', '2021-05-18 02:23:06', 'admin', '2021-05-18 02:23:06', '', null, '管理员');
+INSERT INTO `sys_user` VALUES ('2', '105', 'wumei', '吉客后台', '00', 'admin@wumei.com', '15666666666', '1', '', '$2a$10$uLlHqgW4b5oAqoS81Rhkk.7Tf6wnGvh9FE9V160Dv2Kn9doOrB4qe', '0', '0', '127.0.0.1', '2021-05-18 02:23:06', 'admin', '2021-05-18 02:23:06', 'admin', '2021-06-19 09:31:14', '测试员');
 INSERT INTO `sys_user` VALUES ('100', null, 'public', '访客', '00', '', '', '0', '', '$2a$10$E8d4gZ3.QQzDE7LBfY7XpuuGX.LvWFcA982AAdAzk24u91bQ1nete', '0', '0', '', null, 'admin', '2021-05-29 08:37:36', 'admin', '2021-06-19 09:31:20', null);
 
 -- ----------------------------

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 /**
  * 角色与部门关联表 数据层
  *
- * @author ruoyi
+ * @author mall
  */
 @Repository
 public interface SysRoleDeptMapper {

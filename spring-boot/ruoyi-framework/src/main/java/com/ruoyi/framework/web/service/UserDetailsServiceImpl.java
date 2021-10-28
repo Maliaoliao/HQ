@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 用户验证处理
  *
- * @author ruoyi
+ * @author mall
  */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

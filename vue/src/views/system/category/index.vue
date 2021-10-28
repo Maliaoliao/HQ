@@ -76,7 +76,7 @@
       <el-table-column type="selection" width="55" align="center" />
       <el-table-column label="序号" width="80" align="center" prop="categoryId" />
       <el-table-column label="分类名称" width="250" align="center" prop="categoryName" />
-      <el-table-column label="备注" align="center" prop="remark" />
+      <el-table-column label="备注" align=left prop="remark" />
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button
@@ -96,7 +96,7 @@
         </template>
       </el-table-column>
     </el-table>
-    
+
     <pagination
       v-show="total>0"
       :total="total"

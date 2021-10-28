@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 /**
  * 部门管理 数据层
  *
- * @author ruoyi
+ * @author mall
  */
 @Repository
 public interface SysDeptMapper {

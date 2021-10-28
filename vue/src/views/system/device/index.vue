@@ -1,13 +1,3 @@
-/******************************************************************************
- * 作者：kerwincui
- * 时间：2021-06-08
- * 邮箱：164770707@qq.com
- * 源码地址：https://gitee.com/kerwincui/wumei-smart
- * author: kerwincui
- * create: 2021-06-08
- * email：164770707@qq.com
- * source:https://github.com/kerwincui/wumei-smart
- ******************************************************************************/
 <template>
   <div class="app-container">
     <el-form
@@ -318,7 +308,7 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="submitForm">确 定</el-button>        
+        <el-button type="primary" @click="submitForm">确 定</el-button>
         <el-button @click="cancel">取 消</el-button>
       </div>
     </el-dialog>
@@ -573,7 +563,7 @@
               </el-select>
             </el-form-item>
           </el-col>
-        </el-row>     
+        </el-row>
 
         <el-divider content-position="center"/>
                 <el-form-item label="重启" prop="isReset">
@@ -705,7 +695,7 @@ export default {
       triggerSourceOptions: [],
       // 彩灯模式字典
       lightModeOptions: [],
-      
+
       // 按键字典
       rfFuncOptions: [],
       // 创建时间时间范围
@@ -979,7 +969,7 @@ export default {
               if(!isApply){
                 this.statusOpen = false;
                 this.getList();
-              }              
+              }
             });
           }
         }
@@ -995,7 +985,7 @@ export default {
               if(!isApply){
                 this.setOpen = false;
                 this.getList();
-              }              
+              }
             });
           }
         }
