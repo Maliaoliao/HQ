@@ -1,8 +1,8 @@
 {
-  "name": "ruoyi",
+  "name": "hq",
   "version": "3.4.0",
-  "description": "吉客后台",
-  "author": "若依",
+  "description": "慧企时代",
+  "author": "Mall",
   "license": "MIT",
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -33,7 +33,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/y_project/RuoYi-Vue.git"
+    "url": "https://gitee.com/y_project/hq-Vue.git"
   },
   "dependencies": {
     "@riophae/vue-treeselect": "0.4.0",

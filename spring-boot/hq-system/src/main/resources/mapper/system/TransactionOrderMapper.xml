@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.system.mapper.TransactionOrderMapper">
+
+    <resultMap type="TransactionOrder" id="TransactionOrderResult">
+                    <result property="orderId" column="order_id"/>
+                    <result property="orderNum" column="order_num"/>
+                    <result property="orderAmount" column="order_amount"/>
+                    <result property="orderPreferentialAmount" column="order_preferential_amount"/>
+                    <result property="paymenChannel" column="paymen_channel"/>
+                    <result property="paymenChannelId" column="paymen_channel_id"/>
+                    <result property="remark" column="remark"/>
+                    <result property="createBy" column="create_by"/>
+                    <result property="createTime" column="create_time"/>
+                    <result property="updateBy" column="update_by"/>
+                    <result property="updateTime" column="update_time"/>
+            </resultMap>
+    
+    <sql id="selectTransactionOrderVo">
+        select order_id, order_num, order_amount, order_preferential_amount, paymen_channel, paymen_channel_id, remark, create_by, create_time, update_by, update_time        from transaction_order
+    </sql>
+
+    <select id="selectTransactionOrderList" parameterType="TransactionOrder" resultMap="TransactionOrderResult">
+        <include refid="selectTransactionOrderVo"/>
+        <where>
+                                                                                                    <if test="orderNum != null  and orderNum != ''">
+                            and order_num = #{orderNum}
+                        </if>
+                                                                                                            <if test="orderAmount != null ">
+                            and order_amount = #{orderAmount}
+                        </if>
+                                                                                                            <if test="orderPreferentialAmount != null ">
+                            and order_preferential_amount = #{orderPreferentialAmount}
+                        </if>
+                                                                                                            <if test="paymenChannel != null  and paymenChannel != ''">
+                            and paymen_channel = #{paymenChannel}
+                        </if>
+                                                                                                            <if test="paymenChannelId != null  and paymenChannelId != ''">
+                            and paymen_channel_id = #{paymenChannelId}
+                        </if>
+                                                                                                                                                                                                    </where>
+    </select>
+
+    <select id="selectTransactionOrderById" parameterType="Long"
+            resultMap="TransactionOrderResult">
+                    <include refid="selectTransactionOrderVo"/>
+            where order_id = #{orderId}
+            </select>
+
+    <insert id="insertTransactionOrder" parameterType="TransactionOrder" useGeneratedKeys="true"
+            keyProperty="orderId">
+        insert into transaction_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                                                                            <if test="orderNum != null and orderNum != ''">order_num,
+                    </if>
+                                                                <if test="orderAmount != null">order_amount,
+                    </if>
+                                                                <if test="orderPreferentialAmount != null">order_preferential_amount,
+                    </if>
+                                                                <if test="paymenChannel != null and paymenChannel != ''">paymen_channel,
+                    </if>
+                                                                <if test="paymenChannelId != null and paymenChannelId != ''">paymen_channel_id,
+                    </if>
+                                                                <if test="remark != null">remark,
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">create_by,
+                    </if>
+                                                                <if test="createTime != null">create_time,
+                    </if>
+                                                                <if test="updateBy != null">update_by,
+                    </if>
+                                                                <if test="updateTime != null">update_time,
+                    </if>
+                                    </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                                                                            <if test="orderNum != null and orderNum != ''">#{orderNum},
+                    </if>
+                                                                <if test="orderAmount != null">#{orderAmount},
+                    </if>
+                                                                <if test="orderPreferentialAmount != null">#{orderPreferentialAmount},
+                    </if>
+                                                                <if test="paymenChannel != null and paymenChannel != ''">#{paymenChannel},
+                    </if>
+                                                                <if test="paymenChannelId != null and paymenChannelId != ''">#{paymenChannelId},
+                    </if>
+                                                                <if test="remark != null">#{remark},
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">#{createBy},
+                    </if>
+                                                                <if test="createTime != null">#{createTime},
+                    </if>
+                                                                <if test="updateBy != null">#{updateBy},
+                    </if>
+                                                                <if test="updateTime != null">#{updateTime},
+                    </if>
+                                    </trim>
+    </insert>
+
+    <update id="updateTransactionOrder" parameterType="TransactionOrder">
+        update transaction_order
+        <trim prefix="SET" suffixOverrides=",">
+                                                                            <if test="orderNum != null and orderNum != ''">order_num =
+                        #{orderNum},
+                    </if>
+                                                                <if test="orderAmount != null">order_amount =
+                        #{orderAmount},
+                    </if>
+                                                                <if test="orderPreferentialAmount != null">order_preferential_amount =
+                        #{orderPreferentialAmount},
+                    </if>
+                                                                <if test="paymenChannel != null and paymenChannel != ''">paymen_channel =
+                        #{paymenChannel},
+                    </if>
+                                                                <if test="paymenChannelId != null and paymenChannelId != ''">paymen_channel_id =
+                        #{paymenChannelId},
+                    </if>
+                                                                <if test="remark != null">remark =
+                        #{remark},
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">create_by =
+                        #{createBy},
+                    </if>
+                                                                <if test="createTime != null">create_time =
+                        #{createTime},
+                    </if>
+                                                                <if test="updateBy != null">update_by =
+                        #{updateBy},
+                    </if>
+                                                                <if test="updateTime != null">update_time =
+                        #{updateTime},
+                    </if>
+                                    </trim>
+        where order_id = #{orderId}
+    </update>
+
+    <delete id="deleteTransactionOrderById" parameterType="Long">
+        delete from transaction_order where order_id = #{orderId}
+    </delete>
+
+    <delete id="deleteTransactionOrderByIds" parameterType="String">
+        delete from transaction_order where order_id in
+        <foreach item="orderId" collection="array" open="(" separator="," close=")">
+            #{orderId}
+        </foreach>
+    </delete>
+    </mapper>

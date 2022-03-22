@@ -55,41 +55,6 @@
     <el-row :gutter="10" class="mb8">
       <el-col :span="1.5">
         <el-button
-          @click="handleAdd"
-          icon="el-icon-plus"
-          plain
-          size="mini"
-          type="primary"
-          v-hasPermi="['system:order:add']"
-        >新增
-        </el-button>
-      </el-col>
-      <el-col :span="1.5">
-        <el-button
-          :disabled="single"
-          @click="handleUpdate"
-          icon="el-icon-edit"
-          plain
-          size="mini"
-          type="success"
-          v-hasPermi="['system:order:edit']"
-        >修改
-        </el-button>
-      </el-col>
-      <el-col :span="1.5">
-        <el-button
-          :disabled="multiple"
-          @click="handleDelete"
-          icon="el-icon-delete"
-          plain
-          size="mini"
-          type="danger"
-          v-hasPermi="['system:order:remove']"
-        >删除
-        </el-button>
-      </el-col>
-      <el-col :span="1.5">
-        <el-button
           @click="handleExport"
           icon="el-icon-download"
           plain
@@ -111,26 +76,6 @@
       <el-table-column align="center" label="支付渠道" prop="paymenChannel"/>
       <el-table-column align="center" label="支付渠道唯一编码" prop="paymenChannelId"/>
       <el-table-column align="center" label="备注" prop="remark"/>
-      <el-table-column align="center" class-name="small-padding fixed-width" label="操作">
-        <template slot-scope="scope">
-          <el-button
-            @click="handleUpdate(scope.row)"
-            icon="el-icon-edit"
-            size="mini"
-            type="text"
-            v-hasPermi="['system:order:edit']"
-          >修改
-          </el-button>
-          <el-button
-            @click="handleDelete(scope.row)"
-            icon="el-icon-delete"
-            size="mini"
-            type="text"
-            v-hasPermi="['system:order:remove']"
-          >删除
-          </el-button>
-        </template>
-      </el-table-column>
     </el-table>
 
     <pagination

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.system.mapper.KitchenMapper">
+
+    <resultMap type="Kitchen" id="KitchenResult">
+                    <result property="kitchenId" column="kitchen_id"/>
+                    <result property="kitchenCode" column="kitchen_code"/>
+                    <result property="kitchenPosition" column="kitchen_position"/>
+                    <result property="kitchenDirectorUserId" column="kitchen_director_user_id"/>
+                    <result property="kitchenContractCode" column="kitchen_contract_code"/>
+                    <result property="kitchenBeginTime" column="kitchen_begin_time"/>
+                    <result property="kitchenEndTime" column="kitchen_end_time"/>
+                    <result property="kitchenRental" column="kitchen_rental"/>
+                    <result property="kitchenForegift" column="kitchen_foregift"/>
+                    <result property="kitchenAttermRemind" column="kitchen_atterm_remind"/>
+                    <result property="kitchenStatus" column="kitchen_status"/>
+                    <result property="remark" column="remark"/>
+                    <result property="createBy" column="create_by"/>
+                    <result property="createTime" column="create_time"/>
+                    <result property="updateBy" column="update_by"/>
+                    <result property="updateTime" column="update_time"/>
+            </resultMap>
+    
+    <sql id="selectKitchenVo">
+        select kitchen_id, kitchen_code, kitchen_position, kitchen_director_user_id, kitchen_contract_code, kitchen_begin_time, kitchen_end_time, kitchen_rental, kitchen_foregift, kitchen_atterm_remind, kitchen_status, remark, create_by, create_time, update_by, update_time        from kitchen
+    </sql>
+
+    <select id="selectKitchenList" parameterType="Kitchen" resultMap="KitchenResult">
+        <include refid="selectKitchenVo"/>
+        <where>
+                                                                                                    <if test="kitchenCode != null  and kitchenCode != ''">
+                            and kitchen_code = #{kitchenCode}
+                        </if>
+                                                                                                            <if test="kitchenPosition != null  and kitchenPosition != ''">
+                            and kitchen_position = #{kitchenPosition}
+                        </if>
+                                                                                                            <if test="kitchenDirectorUserId != null ">
+                            and kitchen_director_user_id = #{kitchenDirectorUserId}
+                        </if>
+                                                                                                            <if test="kitchenContractCode != null  and kitchenContractCode != ''">
+                            and kitchen_contract_code = #{kitchenContractCode}
+                        </if>
+                                                                                                            <if test="kitchenBeginTime != null ">
+                            and kitchen_begin_time = #{kitchenBeginTime}
+                        </if>
+                                                                                                            <if test="kitchenEndTime != null ">
+                            and kitchen_end_time = #{kitchenEndTime}
+                        </if>
+                                                                                                            <if test="kitchenRental != null ">
+                            and kitchen_rental = #{kitchenRental}
+                        </if>
+                                                                                                            <if test="kitchenForegift != null ">
+                            and kitchen_foregift = #{kitchenForegift}
+                        </if>
+                                                                                                            <if test="kitchenAttermRemind != null  and kitchenAttermRemind != ''">
+                            and kitchen_atterm_remind = #{kitchenAttermRemind}
+                        </if>
+                                                                                                            <if test="kitchenStatus != null  and kitchenStatus != ''">
+                            and kitchen_status = #{kitchenStatus}
+                        </if>
+                                                                                                                                                                                                    </where>
+    </select>
+
+    <select id="selectKitchenById" parameterType="Long"
+            resultMap="KitchenResult">
+                    <include refid="selectKitchenVo"/>
+            where kitchen_id = #{kitchenId}
+            </select>
+
+    <insert id="insertKitchen" parameterType="Kitchen" useGeneratedKeys="true"
+            keyProperty="kitchenId">
+        insert into kitchen
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                                                                            <if test="kitchenCode != null and kitchenCode != ''">kitchen_code,
+                    </if>
+                                                                <if test="kitchenPosition != null and kitchenPosition != ''">kitchen_position,
+                    </if>
+                                                                <if test="kitchenDirectorUserId != null">kitchen_director_user_id,
+                    </if>
+                                                                <if test="kitchenContractCode != null and kitchenContractCode != ''">kitchen_contract_code,
+                    </if>
+                                                                <if test="kitchenBeginTime != null">kitchen_begin_time,
+                    </if>
+                                                                <if test="kitchenEndTime != null">kitchen_end_time,
+                    </if>
+                                                                <if test="kitchenRental != null">kitchen_rental,
+                    </if>
+                                                                <if test="kitchenForegift != null">kitchen_foregift,
+                    </if>
+                                                                <if test="kitchenAttermRemind != null and kitchenAttermRemind != ''">kitchen_atterm_remind,
+                    </if>
+                                                                <if test="kitchenStatus != null and kitchenStatus != ''">kitchen_status,
+                    </if>
+                                                                <if test="remark != null">remark,
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">create_by,
+                    </if>
+                                                                <if test="createTime != null">create_time,
+                    </if>
+                                                                <if test="updateBy != null">update_by,
+                    </if>
+                                                                <if test="updateTime != null">update_time,
+                    </if>
+                                    </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                                                                            <if test="kitchenCode != null and kitchenCode != ''">#{kitchenCode},
+                    </if>
+                                                                <if test="kitchenPosition != null and kitchenPosition != ''">#{kitchenPosition},
+                    </if>
+                                                                <if test="kitchenDirectorUserId != null">#{kitchenDirectorUserId},
+                    </if>
+                                                                <if test="kitchenContractCode != null and kitchenContractCode != ''">#{kitchenContractCode},
+                    </if>
+                                                                <if test="kitchenBeginTime != null">#{kitchenBeginTime},
+                    </if>
+                                                                <if test="kitchenEndTime != null">#{kitchenEndTime},
+                    </if>
+                                                                <if test="kitchenRental != null">#{kitchenRental},
+                    </if>
+                                                                <if test="kitchenForegift != null">#{kitchenForegift},
+                    </if>
+                                                                <if test="kitchenAttermRemind != null and kitchenAttermRemind != ''">#{kitchenAttermRemind},
+                    </if>
+                                                                <if test="kitchenStatus != null and kitchenStatus != ''">#{kitchenStatus},
+                    </if>
+                                                                <if test="remark != null">#{remark},
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">#{createBy},
+                    </if>
+                                                                <if test="createTime != null">#{createTime},
+                    </if>
+                                                                <if test="updateBy != null">#{updateBy},
+                    </if>
+                                                                <if test="updateTime != null">#{updateTime},
+                    </if>
+                                    </trim>
+    </insert>
+
+    <update id="updateKitchen" parameterType="Kitchen">
+        update kitchen
+        <trim prefix="SET" suffixOverrides=",">
+                                                                            <if test="kitchenCode != null and kitchenCode != ''">kitchen_code =
+                        #{kitchenCode},
+                    </if>
+                                                                <if test="kitchenPosition != null and kitchenPosition != ''">kitchen_position =
+                        #{kitchenPosition},
+                    </if>
+                                                                <if test="kitchenDirectorUserId != null">kitchen_director_user_id =
+                        #{kitchenDirectorUserId},
+                    </if>
+                                                                <if test="kitchenContractCode != null and kitchenContractCode != ''">kitchen_contract_code =
+                        #{kitchenContractCode},
+                    </if>
+                                                                <if test="kitchenBeginTime != null">kitchen_begin_time =
+                        #{kitchenBeginTime},
+                    </if>
+                                                                <if test="kitchenEndTime != null">kitchen_end_time =
+                        #{kitchenEndTime},
+                    </if>
+                                                                <if test="kitchenRental != null">kitchen_rental =
+                        #{kitchenRental},
+                    </if>
+                                                                <if test="kitchenForegift != null">kitchen_foregift =
+                        #{kitchenForegift},
+                    </if>
+                                                                <if test="kitchenAttermRemind != null and kitchenAttermRemind != ''">kitchen_atterm_remind =
+                        #{kitchenAttermRemind},
+                    </if>
+                                                                <if test="kitchenStatus != null and kitchenStatus != ''">kitchen_status =
+                        #{kitchenStatus},
+                    </if>
+                                                                <if test="remark != null">remark =
+                        #{remark},
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">create_by =
+                        #{createBy},
+                    </if>
+                                                                <if test="createTime != null">create_time =
+                        #{createTime},
+                    </if>
+                                                                <if test="updateBy != null">update_by =
+                        #{updateBy},
+                    </if>
+                                                                <if test="updateTime != null">update_time =
+                        #{updateTime},
+                    </if>
+                                    </trim>
+        where kitchen_id = #{kitchenId}
+    </update>
+
+    <delete id="deleteKitchenById" parameterType="Long">
+        delete from kitchen where kitchen_id = #{kitchenId}
+    </delete>
+
+    <delete id="deleteKitchenByIds" parameterType="String">
+        delete from kitchen where kitchen_id in
+        <foreach item="kitchenId" collection="array" open="(" separator="," close=")">
+            #{kitchenId}
+        </foreach>
+    </delete>
+    </mapper>

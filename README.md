@@ -94,7 +94,7 @@ registry.cn-chengdu.aliyuncs.com/kerwincui/wumei-smart:1.0
 * [演示视频](https://space.bilibili.com/471004321)
 * [硬件详情和购买方式](https://gitee.com/kerwincui/wumei-smart/wikis/pages?sort_id=4233922&doc_id=1506495)
 * [吉客后台官网](http://wumei.live)
-* [若依文档](http://doc.ruoyi.vip/ruoyi-vue/)，前端和后端基于Ruoyi-Vue，前后端分离权限管理系统
+* [若依文档](http://doc.ruoyi.vip/hq-vue/)，前端和后端基于hq-Vue，前后端分离权限管理系统
 * [XUI](https://gitee.com/xuexiangjys/XUI)，Android基于XUI开发，是一个简洁而优雅的原生UI框架
 * [ESP-IDF编程指南](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/index.html)
 * [EMQ文档](https://docs.emqx.cn)

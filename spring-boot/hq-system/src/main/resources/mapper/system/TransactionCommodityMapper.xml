@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.system.mapper.TransactionCommodityMapper">
+
+    <resultMap type="TransactionCommodity" id="TransactionCommodityResult">
+        <result property="commodityId" column="commodity_id"/>
+        <result property="commodityCode" column="commodity_code"/>
+        <result property="commodityName" column="commodity_name"/>
+        <result property="commodityPrice" column="commodity_price"/>
+        <result property="commodityPicture" column="commodity_picture"/>
+        <result property="remark" column="remark"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="selectTransactionCommodityVo">
+        select commodity_id,
+               commodity_code,
+               commodity_name,
+               commodity_price,
+               commodity_picture,
+               remark,
+               create_by,
+               create_time,
+               update_by,
+               update_time
+        from transaction_commodity
+    </sql>
+
+    <select id="selectTransactionCommodityList" parameterType="TransactionCommodity"
+            resultMap="TransactionCommodityResult">
+        <include refid="selectTransactionCommodityVo"/>
+        <where>
+            <if test="commodityCode != null  and commodityCode != ''">
+                and commodity_code = #{commodityCode}
+            </if>
+            <if test="commodityName != null  and commodityName != ''">
+                and commodity_name like concat('%', #{commodityName}, '%')
+            </if>
+            <if test="commodityPrice != null ">
+                and commodity_price = #{commodityPrice}
+            </if>
+            <if test="commodityPicture != null  and commodityPicture != ''">
+                and commodity_picture = #{commodityPicture}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectTransactionCommodityById" parameterType="Long"
+            resultMap="TransactionCommodityResult">
+        <include refid="selectTransactionCommodityVo"/>
+        where commodity_id = #{commodityId}
+    </select>
+
+    <insert id="insertTransactionCommodity" parameterType="TransactionCommodity" useGeneratedKeys="true"
+            keyProperty="commodityId">
+        insert into transaction_commodity
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="commodityCode != null and commodityCode != ''">commodity_code,
+            </if>
+            <if test="commodityName != null and commodityName != ''">commodity_name,
+            </if>
+            <if test="commodityPrice != null">commodity_price,
+            </if>
+            <if test="commodityPicture != null">commodity_picture,
+            </if>
+            <if test="remark != null">remark,
+            </if>
+            <if test="createBy != null and createBy != ''">create_by,
+            </if>
+            <if test="createTime != null">create_time,
+            </if>
+            <if test="updateBy != null">update_by,
+            </if>
+            <if test="updateTime != null">update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="commodityCode != null and commodityCode != ''">#{commodityCode},
+            </if>
+            <if test="commodityName != null and commodityName != ''">#{commodityName},
+            </if>
+            <if test="commodityPrice != null">#{commodityPrice},
+            </if>
+            <if test="commodityPicture != null">#{commodityPicture},
+            </if>
+            <if test="remark != null">#{remark},
+            </if>
+            <if test="createBy != null and createBy != ''">#{createBy},
+            </if>
+            <if test="createTime != null">#{createTime},
+            </if>
+            <if test="updateBy != null">#{updateBy},
+            </if>
+            <if test="updateTime != null">#{updateTime},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateTransactionCommodity" parameterType="TransactionCommodity">
+        update transaction_commodity
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="commodityCode != null and commodityCode != ''">commodity_code =
+                #{commodityCode},
+            </if>
+            <if test="commodityName != null and commodityName != ''">commodity_name =
+                #{commodityName},
+            </if>
+            <if test="commodityPrice != null">commodity_price =
+                #{commodityPrice},
+            </if>
+            <if test="commodityPicture != null">commodity_picture =
+                #{commodityPicture},
+            </if>
+            <if test="remark != null">remark =
+                #{remark},
+            </if>
+            <if test="createBy != null and createBy != ''">create_by =
+                #{createBy},
+            </if>
+            <if test="createTime != null">create_time =
+                #{createTime},
+            </if>
+            <if test="updateBy != null">update_by =
+                #{updateBy},
+            </if>
+            <if test="updateTime != null">update_time =
+                #{updateTime},
+            </if>
+        </trim>
+        where commodity_id = #{commodityId}
+    </update>
+
+    <delete id="deleteTransactionCommodityById" parameterType="Long">
+        delete
+        from transaction_commodity
+        where commodity_id = #{commodityId}
+    </delete>
+
+    <delete id="deleteTransactionCommodityByIds" parameterType="String">
+        delete from transaction_commodity where commodity_id in
+        <foreach item="commodityId" collection="array" open="(" separator="," close=")">
+            #{commodityId}
+        </foreach>
+    </delete>
+</mapper>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.system.mapper.TransactionCommoditiesMapper">
+
+    <resultMap type="TransactionCommodities" id="TransactionCommoditiesResult">
+                    <result property="commodityId" column="commodity_id"/>
+                    <result property="commodityCode" column="commodity_code"/>
+                    <result property="commodityName" column="commodity_name"/>
+                    <result property="commodityPrice" column="commodity_price"/>
+                    <result property="remark" column="remark"/>
+                    <result property="createBy" column="create_by"/>
+                    <result property="createTime" column="create_time"/>
+                    <result property="updateBy" column="update_by"/>
+                    <result property="updateTime" column="update_time"/>
+            </resultMap>
+    
+    <sql id="selectTransactionCommoditiesVo">
+        select commodity_id, commodity_code, commodity_name, commodity_price, remark, create_by, create_time, update_by, update_time        from transaction_commodities
+    </sql>
+
+    <select id="selectTransactionCommoditiesList" parameterType="TransactionCommodities" resultMap="TransactionCommoditiesResult">
+        <include refid="selectTransactionCommoditiesVo"/>
+        <where>
+                                                                                                    <if test="commodityCode != null  and commodityCode != ''">
+                            and commodity_code = #{commodityCode}
+                        </if>
+                                                                                                            <if test="commodityName != null  and commodityName != ''">
+                            and commodity_name like concat('%', #{commodityName}, '%')
+                        </if>
+                                                                                                            <if test="commodityPrice != null ">
+                            and commodity_price = #{commodityPrice}
+                        </if>
+                                                                                                                                                                                                    </where>
+    </select>
+
+    <select id="selectTransactionCommoditiesById" parameterType="Long"
+            resultMap="TransactionCommoditiesResult">
+                    <include refid="selectTransactionCommoditiesVo"/>
+            where commodity_id = #{commodityId}
+            </select>
+
+    <insert id="insertTransactionCommodities" parameterType="TransactionCommodities" useGeneratedKeys="true"
+            keyProperty="commodityId">
+        insert into transaction_commodities
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                                                                            <if test="commodityCode != null and commodityCode != ''">commodity_code,
+                    </if>
+                                                                <if test="commodityName != null and commodityName != ''">commodity_name,
+                    </if>
+                                                                <if test="commodityPrice != null">commodity_price,
+                    </if>
+                                                                <if test="remark != null">remark,
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">create_by,
+                    </if>
+                                                                <if test="createTime != null">create_time,
+                    </if>
+                                                                <if test="updateBy != null">update_by,
+                    </if>
+                                                                <if test="updateTime != null">update_time,
+                    </if>
+                                    </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                                                                            <if test="commodityCode != null and commodityCode != ''">#{commodityCode},
+                    </if>
+                                                                <if test="commodityName != null and commodityName != ''">#{commodityName},
+                    </if>
+                                                                <if test="commodityPrice != null">#{commodityPrice},
+                    </if>
+                                                                <if test="remark != null">#{remark},
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">#{createBy},
+                    </if>
+                                                                <if test="createTime != null">#{createTime},
+                    </if>
+                                                                <if test="updateBy != null">#{updateBy},
+                    </if>
+                                                                <if test="updateTime != null">#{updateTime},
+                    </if>
+                                    </trim>
+    </insert>
+
+    <update id="updateTransactionCommodities" parameterType="TransactionCommodities">
+        update transaction_commodities
+        <trim prefix="SET" suffixOverrides=",">
+                                                                            <if test="commodityCode != null and commodityCode != ''">commodity_code =
+                        #{commodityCode},
+                    </if>
+                                                                <if test="commodityName != null and commodityName != ''">commodity_name =
+                        #{commodityName},
+                    </if>
+                                                                <if test="commodityPrice != null">commodity_price =
+                        #{commodityPrice},
+                    </if>
+                                                                <if test="remark != null">remark =
+                        #{remark},
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">create_by =
+                        #{createBy},
+                    </if>
+                                                                <if test="createTime != null">create_time =
+                        #{createTime},
+                    </if>
+                                                                <if test="updateBy != null">update_by =
+                        #{updateBy},
+                    </if>
+                                                                <if test="updateTime != null">update_time =
+                        #{updateTime},
+                    </if>
+                                    </trim>
+        where commodity_id = #{commodityId}
+    </update>
+
+    <delete id="deleteTransactionCommoditiesById" parameterType="Long">
+        delete from transaction_commodities where commodity_id = #{commodityId}
+    </delete>
+
+    <delete id="deleteTransactionCommoditiesByIds" parameterType="String">
+        delete from transaction_commodities where commodity_id in
+        <foreach item="commodityId" collection="array" open="(" separator="," close=")">
+            #{commodityId}
+        </foreach>
+    </delete>
+    </mapper>

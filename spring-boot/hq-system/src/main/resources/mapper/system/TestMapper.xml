@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.system.mapper.TestMapper">
+
+    <resultMap type="Test" id="TestResult">
+        <result property="test" column="test"/>
+    </resultMap>
+
+    <sql id="selectTestVo">
+        select test
+        from test
+    </sql>
+
+    <select id="selectTestList" parameterType="Test" resultMap="TestResult">
+        <include refid="selectTestVo"/>
+        <where>
+        </where>
+    </select>
+
+    <select id="selectTestById" parameterType="Long"
+            resultMap="TestResult">
+        <include refid="selectTestVo"/>
+        where test = #{test}
+    </select>
+
+    <insert id="insertTest" parameterType="Test" useGeneratedKeys="true"
+            keyProperty="test">
+        insert into test
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+        </trim>
+    </insert>
+
+    <update id="updateTest" parameterType="Test">
+        update test
+        <trim prefix="SET" suffixOverrides=",">
+        </trim>
+        where test = #{test}
+    </update>
+
+    <delete id="deleteTestById" parameterType="Long">
+        delete
+        from test
+        where test = #{test}
+    </delete>
+
+    <delete id="deleteTestByIds" parameterType="String">
+        delete from test where test in
+        <foreach item="test" collection="array" open="(" separator="," close=")">
+            #{test}
+        </foreach>
+    </delete>
+</mapper>

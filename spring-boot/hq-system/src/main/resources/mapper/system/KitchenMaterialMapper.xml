@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.system.mapper.KitchenMaterialMapper">
+
+    <resultMap type="KitchenMaterial" id="KitchenMaterialResult">
+                    <result property="materialId" column="material_id"/>
+                    <result property="materialName" column="material_name"/>
+                    <result property="kitchenId" column="kitchen_id"/>
+                    <result property="materialCheckStatus" column="material_check_status"/>
+                    <result property="materialCheckUserId" column="material_check_user_id"/>
+                    <result property="materialCheckDate" column="material_check_date"/>
+                    <result property="materialQuantity" column="material_quantity"/>
+                    <result property="materialUnit" column="material_unit"/>
+                    <result property="paymenAmount" column="paymen_amount"/>
+                    <result property="paymenCanal" column="paymen_canal"/>
+                    <result property="paymenWay" column="paymen_way"/>
+                    <result property="paymenOrderId" column="paymen_order_id"/>
+                    <result property="remark" column="remark"/>
+                    <result property="createBy" column="create_by"/>
+                    <result property="createTime" column="create_time"/>
+                    <result property="updateBy" column="update_by"/>
+                    <result property="updateTime" column="update_time"/>
+            </resultMap>
+    
+    <sql id="selectKitchenMaterialVo">
+        select material_id, material_name, kitchen_id, material_check_status, material_check_user_id, material_check_date, material_quantity, material_unit, paymen_amount, paymen_canal, paymen_way, paymen_order_id, remark, create_by, create_time, update_by, update_time        from kitchen_material
+    </sql>
+
+    <select id="selectKitchenMaterialList" parameterType="KitchenMaterial" resultMap="KitchenMaterialResult">
+        <include refid="selectKitchenMaterialVo"/>
+        <where>
+                                                                                                    <if test="materialName != null  and materialName != ''">
+                            and material_name like concat('%', #{materialName}, '%')
+                        </if>
+                                                                                                            <if test="kitchenId != null ">
+                            and kitchen_id = #{kitchenId}
+                        </if>
+                                                                                                            <if test="materialCheckStatus != null  and materialCheckStatus != ''">
+                            and material_check_status = #{materialCheckStatus}
+                        </if>
+                                                                                                            <if test="materialCheckUserId != null ">
+                            and material_check_user_id = #{materialCheckUserId}
+                        </if>
+                                                                                                            <if test="materialCheckDate != null ">
+                            and material_check_date = #{materialCheckDate}
+                        </if>
+                                                                                                            <if test="materialQuantity != null ">
+                            and material_quantity = #{materialQuantity}
+                        </if>
+                                                                                                            <if test="materialUnit != null  and materialUnit != ''">
+                            and material_unit = #{materialUnit}
+                        </if>
+                                                                                                            <if test="paymenAmount != null ">
+                            and paymen_amount = #{paymenAmount}
+                        </if>
+                                                                                                            <if test="paymenCanal != null  and paymenCanal != ''">
+                            and paymen_canal = #{paymenCanal}
+                        </if>
+                                                                                                            <if test="paymenWay != null  and paymenWay != ''">
+                            and paymen_way = #{paymenWay}
+                        </if>
+                                                                                                            <if test="paymenOrderId != null  and paymenOrderId != ''">
+                            and paymen_order_id = #{paymenOrderId}
+                        </if>
+                                                                                                                                                                                                    </where>
+    </select>
+
+    <select id="selectKitchenMaterialById" parameterType="Long"
+            resultMap="KitchenMaterialResult">
+                    <include refid="selectKitchenMaterialVo"/>
+            where material_id = #{materialId}
+            </select>
+
+    <insert id="insertKitchenMaterial" parameterType="KitchenMaterial" useGeneratedKeys="true"
+            keyProperty="materialId">
+        insert into kitchen_material
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                                                                            <if test="materialName != null and materialName != ''">material_name,
+                    </if>
+                                                                <if test="kitchenId != null">kitchen_id,
+                    </if>
+                                                                <if test="materialCheckStatus != null and materialCheckStatus != ''">material_check_status,
+                    </if>
+                                                                <if test="materialCheckUserId != null">material_check_user_id,
+                    </if>
+                                                                <if test="materialCheckDate != null">material_check_date,
+                    </if>
+                                                                <if test="materialQuantity != null">material_quantity,
+                    </if>
+                                                                <if test="materialUnit != null and materialUnit != ''">material_unit,
+                    </if>
+                                                                <if test="paymenAmount != null">paymen_amount,
+                    </if>
+                                                                <if test="paymenCanal != null and paymenCanal != ''">paymen_canal,
+                    </if>
+                                                                <if test="paymenWay != null and paymenWay != ''">paymen_way,
+                    </if>
+                                                                <if test="paymenOrderId != null and paymenOrderId != ''">paymen_order_id,
+                    </if>
+                                                                <if test="remark != null">remark,
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">create_by,
+                    </if>
+                                                                <if test="createTime != null">create_time,
+                    </if>
+                                                                <if test="updateBy != null">update_by,
+                    </if>
+                                                                <if test="updateTime != null">update_time,
+                    </if>
+                                    </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                                                                            <if test="materialName != null and materialName != ''">#{materialName},
+                    </if>
+                                                                <if test="kitchenId != null">#{kitchenId},
+                    </if>
+                                                                <if test="materialCheckStatus != null and materialCheckStatus != ''">#{materialCheckStatus},
+                    </if>
+                                                                <if test="materialCheckUserId != null">#{materialCheckUserId},
+                    </if>
+                                                                <if test="materialCheckDate != null">#{materialCheckDate},
+                    </if>
+                                                                <if test="materialQuantity != null">#{materialQuantity},
+                    </if>
+                                                                <if test="materialUnit != null and materialUnit != ''">#{materialUnit},
+                    </if>
+                                                                <if test="paymenAmount != null">#{paymenAmount},
+                    </if>
+                                                                <if test="paymenCanal != null and paymenCanal != ''">#{paymenCanal},
+                    </if>
+                                                                <if test="paymenWay != null and paymenWay != ''">#{paymenWay},
+                    </if>
+                                                                <if test="paymenOrderId != null and paymenOrderId != ''">#{paymenOrderId},
+                    </if>
+                                                                <if test="remark != null">#{remark},
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">#{createBy},
+                    </if>
+                                                                <if test="createTime != null">#{createTime},
+                    </if>
+                                                                <if test="updateBy != null">#{updateBy},
+                    </if>
+                                                                <if test="updateTime != null">#{updateTime},
+                    </if>
+                                    </trim>
+    </insert>
+
+    <update id="updateKitchenMaterial" parameterType="KitchenMaterial">
+        update kitchen_material
+        <trim prefix="SET" suffixOverrides=",">
+                                                                            <if test="materialName != null and materialName != ''">material_name =
+                        #{materialName},
+                    </if>
+                                                                <if test="kitchenId != null">kitchen_id =
+                        #{kitchenId},
+                    </if>
+                                                                <if test="materialCheckStatus != null and materialCheckStatus != ''">material_check_status =
+                        #{materialCheckStatus},
+                    </if>
+                                                                <if test="materialCheckUserId != null">material_check_user_id =
+                        #{materialCheckUserId},
+                    </if>
+                                                                <if test="materialCheckDate != null">material_check_date =
+                        #{materialCheckDate},
+                    </if>
+                                                                <if test="materialQuantity != null">material_quantity =
+                        #{materialQuantity},
+                    </if>
+                                                                <if test="materialUnit != null and materialUnit != ''">material_unit =
+                        #{materialUnit},
+                    </if>
+                                                                <if test="paymenAmount != null">paymen_amount =
+                        #{paymenAmount},
+                    </if>
+                                                                <if test="paymenCanal != null and paymenCanal != ''">paymen_canal =
+                        #{paymenCanal},
+                    </if>
+                                                                <if test="paymenWay != null and paymenWay != ''">paymen_way =
+                        #{paymenWay},
+                    </if>
+                                                                <if test="paymenOrderId != null and paymenOrderId != ''">paymen_order_id =
+                        #{paymenOrderId},
+                    </if>
+                                                                <if test="remark != null">remark =
+                        #{remark},
+                    </if>
+                                                                <if test="createBy != null and createBy != ''">create_by =
+                        #{createBy},
+                    </if>
+                                                                <if test="createTime != null">create_time =
+                        #{createTime},
+                    </if>
+                                                                <if test="updateBy != null">update_by =
+                        #{updateBy},
+                    </if>
+                                                                <if test="updateTime != null">update_time =
+                        #{updateTime},
+                    </if>
+                                    </trim>
+        where material_id = #{materialId}
+    </update>
+
+    <delete id="deleteKitchenMaterialById" parameterType="Long">
+        delete from kitchen_material where material_id = #{materialId}
+    </delete>
+
+    <delete id="deleteKitchenMaterialByIds" parameterType="String">
+        delete from kitchen_material where material_id in
+        <foreach item="materialId" collection="array" open="(" separator="," close=")">
+            #{materialId}
+        </foreach>
+    </delete>
+    </mapper>
