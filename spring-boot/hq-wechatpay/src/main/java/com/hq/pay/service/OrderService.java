@@ -10,7 +10,7 @@ public interface OrderService {
 
 
     /**
-     * 获取微信支付二维码.
+     * 获取微信支付二维码-test.
      *
      * @return the string
      */
