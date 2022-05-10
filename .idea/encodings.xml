@@ -11,5 +11,7 @@
     <file url="file://$PROJECT_DIR$/spring-boot/hq-quartz/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot/hq-system/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot/hq-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot/hq-wechatpay/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot/hq-wechatpay/src/main/resources" charset="UTF-8" />
   </component>
 </project>

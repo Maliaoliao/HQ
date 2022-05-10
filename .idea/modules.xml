@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-common/hq-common.iml" filepath="$PROJECT_DIR$/spring-boot/hq-common/hq-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-framework/hq-framework.iml" filepath="$PROJECT_DIR$/spring-boot/hq-framework/hq-framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-generator/hq-generator.iml" filepath="$PROJECT_DIR$/spring-boot/hq-generator/hq-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-wechatpay/hq-pay.iml" filepath="$PROJECT_DIR$/spring-boot/hq-wechatpay/hq-pay.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-quartz/hq-quartz.iml" filepath="$PROJECT_DIR$/spring-boot/hq-quartz/hq-quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-system/hq-system.iml" filepath="$PROJECT_DIR$/spring-boot/hq-system/hq-system.iml" />
     </modules>
