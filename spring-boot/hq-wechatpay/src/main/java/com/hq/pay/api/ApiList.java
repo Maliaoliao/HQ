@@ -9,7 +9,7 @@ package com.hq.pay.api;
 public class ApiList {
 
     /**
-     * Native下单API
+     * Native下单API （POST）
      */
     public final static String PLACE_AN_ORDER= "https://api.mch.weixin.qq.com/v3/pay/transactions/native";
 }

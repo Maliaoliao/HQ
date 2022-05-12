@@ -2344,7 +2344,7 @@ DROP TABLE IF EXISTS `transaction_order`;
 CREATE TABLE `transaction_order`  (
                                       `order_id` bigint(0) NOT NULL AUTO_INCREMENT COMMENT '订单ID',
                                       `order_num` VARCHAR (64)   NOT NULL COMMENT '订单关联设备编号',
-                                      `order_amount` INT   NOT NULL COMMENT '订单金额',
+                                      `order_amount` INT   NOT NULL COMMENT '订单金额(分)',
                                       `order_preferential_amount` INT  NULL COMMENT '订单优惠金额',
                                       `paymen_channel` CHAR NOT NULL COMMENT '支付渠道',
                                       `paymen_channel_id` varchar(64)  NOT NULL COMMENT '支付渠道唯一编码',

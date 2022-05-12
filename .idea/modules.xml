@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-wechatpay/hq-pay.iml" filepath="$PROJECT_DIR$/spring-boot/hq-wechatpay/hq-pay.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-quartz/hq-quartz.iml" filepath="$PROJECT_DIR$/spring-boot/hq-quartz/hq-quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-system/hq-system.iml" filepath="$PROJECT_DIR$/spring-boot/hq-system/hq-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-teade/hq-teade.iml" filepath="$PROJECT_DIR$/spring-boot/hq-teade/hq-teade.iml" />
     </modules>
   </component>
 </project>

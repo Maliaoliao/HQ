@@ -1,5 +1,7 @@
 package com.hq.pay.service;
 
+import java.io.IOException;
+
 /**
  * 微信下单服务.
  *
@@ -10,10 +12,9 @@ public interface OrderService {
 
 
     /**
-     * 获取微信支付二维码-test.
+     * 获取微信支付二维码.
      *
-     * @return the string
      */
-    String placeAnOrder();
+    String placeAnOrder() throws IOException;
 
 }
