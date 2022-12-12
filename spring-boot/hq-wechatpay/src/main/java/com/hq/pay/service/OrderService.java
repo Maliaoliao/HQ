@@ -6,7 +6,7 @@ import java.io.IOException;
  * 微信下单服务.
  *
  * @author: mall
- * @date: 2022 -05-10 10:47
+ * @date: 2022-05-10 10:47
  */
 public interface OrderService {
 
