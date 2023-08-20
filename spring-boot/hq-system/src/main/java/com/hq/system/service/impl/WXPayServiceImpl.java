@@ -26,6 +26,9 @@ import com.wechat.pay.java.service.payments.nativepay.model.Amount;
 import com.wechat.pay.java.service.payments.nativepay.model.PrepayRequest;
 import com.wechat.pay.java.service.payments.nativepay.model.PrepayResponse;
 import com.wechat.pay.java.service.payments.nativepay.model.QueryOrderByOutTradeNoRequest;
+import com.wechat.pay.java.service.refund.RefundService;
+import com.wechat.pay.java.service.refund.model.CreateRequest;
+import com.wechat.pay.java.service.refund.model.Refund;
 import me.chanjar.weixin.common.error.WxErrorException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -548,8 +551,11 @@ public class WXPayServiceImpl implements IWXPayService {
         AesUtil aesUtil = new AesUtil("APIv3密钥".getBytes());
         String aes = aesUtil.decryptToString(associated_data.getBytes(), nonce.getBytes(), ciphertext);
 
+        //
         System.out.println("解密后=" + aes);
 
+        //TODO trade_state SUCCESS 支付成功之后出餐
+        //如何通知
         Map map = new HashMap<>();
         //响应接口
         map.put("code", "SUCCESS");
@@ -578,7 +584,7 @@ public class WXPayServiceImpl implements IWXPayService {
     }
 
     @Override
-    public void selectOrder() {
+    public void selectOrder(String tradeNo) {
         //用户下单成功后，可以通过订单id查询是否支付成功
 
         //Map map = JSON.parseObject(json);
@@ -601,7 +607,7 @@ public class WXPayServiceImpl implements IWXPayService {
         //商户直连号
         request.setMchid("1230000109");
         //商户订单号,不是在同一事务中
-        request.setOutTradeNo("xxxxxxxxxxxx");
+        request.setOutTradeNo(tradeNo);
         try {
             Transaction t = nativePayService.queryOrderByOutTradeNo(request);
         } catch (HttpException e) { // 发送HTTP请求失败
@@ -614,6 +620,55 @@ public class WXPayServiceImpl implements IWXPayService {
             logger.error(e.getMessage(), e.getMessage());
             // 调用e.getMessage()获取信息打印日志或上报监控，更多方法见MalformedMessageException定义
         }
+    }
+
+    @Override
+    public void refund() {
+        //用户下单成功后，可以通过订单id查询是否支付成功
+        //Map map = JSON.parseObject(json);
+        //初始化配置
+        Config config =
+                new RSAAutoCertificateConfig.Builder()
+                        .merchantId(hqConfig.merchantId)
+                        // 使用 com.wechat.pay.java.core.util 中的函数从本地文件中加载商户私钥，商户私钥会用来生成请求的签名
+                        .privateKeyFromPath(hqConfig.privateKeyPath)
+                        .merchantSerialNumber(hqConfig.merchantSerialNumber)
+                        .apiV3Key(hqConfig.apiV3key)
+                        .build();
+
+        // 初始化服务
+        RefundService service = new RefundService.Builder().config(config).build();
+        //退货信息
+        CreateRequest request = new CreateRequest();
+        //订单号
+        request.setTransactionId("xxxxxx");
+        //退款单号
+        request.setOutTradeNo("xxxxxx");
+        com.wechat.pay.java.service.refund.model.Amount amount = new com.wechat.pay.java.service.refund.model.Amount();
+        //退款金额
+        amount.setRefund(111L);
+        //原订单金额
+        amount.setTotal(111L);
+        //退款币种
+        amount.setCurrency("CNY");
+        try {
+            Refund response = service.create(request);
+            //退款状态 退款到银行发现用户的卡作废或者冻结了，导致原路退款银行卡失败，可前往商户平台-交易中心，手动处理此笔退款。
+            //枚举值：
+            //SUCCESS：退款成功
+            //CLOSED：退款关闭
+            //PROCESSING：退款处理中
+            //ABNORMAL：退款异常
+            //示例值：SUCCESS
+            response.getStatus();
+        } catch (HttpException e) { // 发送HTTP请求失败
+            // 调用e.getHttpRequest()获取请求打印日志或上报监控，更多方法见HttpException定义
+        } catch (ServiceException e) { // 服务返回状态小于200或大于等于300，例如500
+            // 调用e.getResponseBody()获取返回体打印日志或上报监控，更多方法见ServiceException定义
+        } catch (MalformedMessageException e) { // 服务返回成功，返回体类型不合法，或者解析返回体失败
+            // 调用e.getMessage()获取信息打印日志或上报监控，更多方法见MalformedMessageException定义
+        }
+
     }
 
 

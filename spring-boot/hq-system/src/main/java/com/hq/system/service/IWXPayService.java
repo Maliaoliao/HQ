@@ -80,5 +80,10 @@ public interface IWXPayService {
     /**
      * 订单查询呢
      */
-    void selectOrder();
+    void selectOrder(String selectOrder);
+
+    /**
+     * 退款
+     */
+    void refund();
 }
