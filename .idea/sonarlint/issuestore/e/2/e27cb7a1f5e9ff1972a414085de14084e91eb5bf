@@ -1,0 +1,37 @@
+
+\
+java:S1118":Add a private constructor to hide the implicit public one.(œõòÌÿÿÿÿÿ8ûõšåŠ0
+t
+java:S3776""RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(ÓÕÈûÿÿÿÿ8‰öšåŠ0
+l
+java:S32528"JUse static access with "org.apache.commons.lang3.StringUtils" for "split".(¸¹ÿÿÿÿÿ8•öšåŠ0
+w
+java:S32528"UUse static access with "org.apache.commons.lang3.StringUtils" for "substringBetween".(¸¹ÿÿÿÿÿ8–öšåŠ0
+t
+java:S3252W"WUse static access with "org.apache.commons.lang3.StringUtils" for "endsWithIgnoreCase".(°’É8œöšåŠ0
+t
+java:S3252["WUse static access with "org.apache.commons.lang3.StringUtils" for "endsWithIgnoreCase".(Á”Ø‡8öšåŠ0
+t
+java:S3252_"WUse static access with "org.apache.commons.lang3.StringUtils" for "endsWithIgnoreCase".(Öø¡ç8ŸöšåŠ0
+t
+java:S3252`"WUse static access with "org.apache.commons.lang3.StringUtils" for "endsWithIgnoreCase".(É’ËØ8 öšåŠ0
+y
+java:S3252d"WUse static access with "org.apache.commons.lang3.StringUtils" for "endsWithIgnoreCase".(¢Ã¤Ùøÿÿÿÿ8¡öšåŠ0
+s
+java:S3252h"WUse static access with "org.apache.commons.lang3.StringUtils" for "endsWithIgnoreCase".(ã­˜X8¢öšåŠ0
+t
+java:S3252l"WUse static access with "org.apache.commons.lang3.StringUtils" for "endsWithIgnoreCase".(øï‡Î8£öšåŠ0
+h
+java:S3252 "JUse static access with "org.apache.commons.lang3.StringUtils" for "split".(¡Öûê8«öšåŠ0
+j
+java:S3252É"LUse static access with "org.apache.commons.lang3.StringUtils" for "indexOf".(Ö¸‡¥8´öšåŠ0
+r
+java:S3252Ê"TUse static access with "org.apache.commons.lang3.StringUtils" for "substringBefore".(‚Ïôë8µöšåŠ0
+j
+java:S3252×"LUse static access with "org.apache.commons.lang3.StringUtils" for "indexOf".(Ö¸‡¥8¸öšåŠ0
+s
+java:S3252Ø"UUse static access with "org.apache.commons.lang3.StringUtils" for "substringBetween".(º†Â‚8¸öšåŠ0
+€
+java:S1488…"bImmediately return this expression instead of assigning it to the temporary variable "moduleName".(†¦»8»öšåŠ0
+‡
+java:S1488’"dImmediately return this expression instead of assigning it to the temporary variable "businessName".(ŞòÌ¥şÿÿÿÿ8»öšåŠ0

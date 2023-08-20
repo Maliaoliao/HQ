@@ -1,0 +1,25 @@
+
+g
+java:S3252î"PUse static access with "org.apache.commons.lang3.StringUtils" for "containsAny".(ôÕµÜ
+h
+java:S3252õ"QUse static access with "org.apache.commons.io.FileUtils" for "writeStringToFile".(òãø
+P
+java:S4719Æ"9Replace charset name argument with StandardCharsets.UTF_8(š­ş
+\
+java:S3252Ù"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ÂìœÍ
+a
+java:S3252˜"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(¡ãˆ•ıÿÿÿÿ
+b
+java:S3252±"KUse static access with "org.apache.commons.lang3.StringUtils" for "equals".(«æŠ©
+g
+java:S3252î"PUse static access with "org.apache.commons.lang3.StringUtils" for "containsAny".(ôÕµÜ
+h
+java:S3252õ"QUse static access with "org.apache.commons.io.FileUtils" for "writeStringToFile".(òãø
+P
+java:S4719Æ"9Replace charset name argument with StandardCharsets.UTF_8(š­ş
+\
+java:S3252Ù"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ÂìœÍ
+a
+java:S3252˜"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(¡ãˆ•ıÿÿÿÿ
+b
+java:S3252±"KUse static access with "org.apache.commons.lang3.StringUtils" for "equals".(«æŠ©

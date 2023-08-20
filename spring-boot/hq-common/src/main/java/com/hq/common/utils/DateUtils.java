@@ -91,6 +91,14 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     }
 
     /**
+     * 日期路径 即年/月/日 如20230102095350
+     */
+    public static final String dateTimeDetailed() {
+        Date now = new Date();
+        return DateFormatUtils.format(now, YYYYMMDDHHMMSS);
+    }
+
+    /**
      * 日期型字符串转化为日期 格式
      */
     public static Date parseDate(Object str) {

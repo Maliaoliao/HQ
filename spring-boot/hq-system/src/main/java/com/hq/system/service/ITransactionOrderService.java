@@ -1,15 +1,18 @@
 package com.hq.system.service;
 
-import java.util.List;
 
 import com.hq.system.domain.TransactionOrder;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * 【请填写功能名称】Service接口
  *
  * @author mall
- * @date 2021-10-26
+ * @date 2022-12-27
  */
+@Component
 public interface ITransactionOrderService {
     /**
      * 查询【请填写功能名称】
@@ -58,4 +61,12 @@ public interface ITransactionOrderService {
      * @return 结果
      */
     public int deleteTransactionOrderById(Long orderId);
+
+    /**
+     * 退货
+     *
+     * @param transactionOrder 【请填写功能名称】
+     * @return 结果
+     */
+    public int returnGoodsTransactionOrderById(TransactionOrder transactionOrder) throws Exception;
 }

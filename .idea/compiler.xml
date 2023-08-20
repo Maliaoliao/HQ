@@ -8,26 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hq-admin" />
-        <module name="hq-pay" />
         <module name="hq-quartz" />
         <module name="hq-system" />
         <module name="hq-common" />
-        <module name="hq-teade" />
-        <module name="hq-generator" />
         <module name="hq-framework" />
+        <module name="hq-generator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HQ" target="1.8" />
-      <module name="hq-admin" target="1.8" />
-      <module name="hq-common" target="1.8" />
-      <module name="hq-framework" target="1.8" />
-      <module name="hq-generator" target="1.8" />
-      <module name="hq-pay" target="1.8" />
-      <module name="hq-quartz" target="1.8" />
-      <module name="hq-system" target="1.8" />
       <module name="hq-teade" target="1.8" />
-      <module name="hq-wechatpay" target="1.5" />
+      <module name="hq-wechatpay" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

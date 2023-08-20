@@ -210,8 +210,6 @@
         <module>hq-quartz</module>
         <module>hq-generator</module>
         <module>hq-common</module>
-        <module>hq-pay</module>
-        <module>hq-teade</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -61,12 +61,19 @@
             <groupId>com.hq</groupId>
             <artifactId>hq-framework</artifactId>
         </dependency>
+        <!-- 微信支付模块-->
+        <dependency>
+            <groupId>com.hq</groupId>
+            <artifactId>hq-system</artifactId>
+            <version>3.4.0</version>
+        </dependency>
 
         <!-- 定时任务-->
         <dependency>
             <groupId>com.hq</groupId>
             <artifactId>hq-quartz</artifactId>
         </dependency>
+
 
         <!-- 代码生成-->
         <dependency>

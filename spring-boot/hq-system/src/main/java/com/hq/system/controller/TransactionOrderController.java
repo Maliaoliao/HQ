@@ -1,31 +1,24 @@
 package com.hq.system.controller;
 
-import java.util.List;
-
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import com.hq.common.annotation.Log;
 import com.hq.common.core.controller.BaseController;
 import com.hq.common.core.domain.AjaxResult;
+import com.hq.common.core.page.TableDataInfo;
 import com.hq.common.enums.BusinessType;
+import com.hq.common.utils.poi.ExcelUtil;
 import com.hq.system.domain.TransactionOrder;
 import com.hq.system.service.ITransactionOrderService;
-import com.hq.common.utils.poi.ExcelUtil;
-import com.hq.common.core.page.TableDataInfo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 【请填写功能名称】Controller
  *
- * @author wxy
- * @date 2021-10-26
+ * @author mall
+ * @date 2022-12-27
  */
 @RestController
 @RequestMapping("/system/order")
@@ -59,7 +52,7 @@ public class TransactionOrderController extends BaseController {
     /**
      * 获取【请填写功能名称】详细信息
      */
-    @PreAuthorize("@ss.hasPermi('system:order:query')")
+    //@PreAuthorize("@ss.hasPermi('system:order:query')")
     @GetMapping(value = "/{orderId}")
     public AjaxResult getInfo(@PathVariable("orderId") Long orderId) {
         return AjaxResult.success(transactionOrderService.selectTransactionOrderById(orderId));
@@ -93,5 +86,15 @@ public class TransactionOrderController extends BaseController {
     @DeleteMapping("/{orderIds}")
     public AjaxResult remove(@PathVariable Long[] orderIds) {
         return toAjax(transactionOrderService.deleteTransactionOrderByIds(orderIds));
+    }
+
+    /**
+     * 退货
+     */
+    //@PreAuthorize("@ss.hasPermi('system:order:remove')")
+    @Log(title = "退货", businessType = BusinessType.RETURNGOODS)
+    @PutMapping("/returngoods")
+    public AjaxResult returnGoods(@RequestBody TransactionOrder transactionOrder) throws Exception {
+        return toAjax(transactionOrderService.returnGoodsTransactionOrderById(transactionOrder));
     }
 }

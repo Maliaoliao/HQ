@@ -5,138 +5,304 @@
 <mapper namespace="com.hq.system.mapper.TransactionOrderMapper">
 
     <resultMap type="TransactionOrder" id="TransactionOrderResult">
-                    <result property="orderId" column="order_id"/>
-                    <result property="orderNum" column="order_num"/>
-                    <result property="orderAmount" column="order_amount"/>
-                    <result property="orderPreferentialAmount" column="order_preferential_amount"/>
-                    <result property="paymenChannel" column="paymen_channel"/>
-                    <result property="paymenChannelId" column="paymen_channel_id"/>
-                    <result property="remark" column="remark"/>
-                    <result property="createBy" column="create_by"/>
-                    <result property="createTime" column="create_time"/>
-                    <result property="updateBy" column="update_by"/>
-                    <result property="updateTime" column="update_time"/>
-            </resultMap>
-    
+        <result property="orderId" column="order_id"/>
+        <result property="openid" column="openid"/>
+        <result property="isSubscribe" column="is_subscribe"/>
+        <result property="tradeType" column="trade_type"/>
+        <result property="bankType" column="bank_type"/>
+        <result property="feeType" column="fee_type"/>
+        <result property="totalFee" column="total_fee"/>
+        <result property="remark" column="remark"/>
+        <result property="settlementTotalFee" column="settlement_total_fee"/>
+        <result property="createBy" column="create_by"/>
+        <result property="couponFee" column="coupon_fee"/>
+        <result property="createTime" column="create_time"/>
+        <result property="cashFeeType" column="cash_fee_type"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="cashFee" column="cash_fee"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="transactionId" column="transaction_id"/>
+        <result property="outTradeNo" column="out_trade_no"/>
+        <result property="attach" column="attach"/>
+        <result property="timeEnd" column="time_end"/>
+        <result property="promotionDetail" column="promotion_detail"/>
+        <result property="commodityId" column="commodity_id"/>
+        <result property="spbillCreateIp" column="spbill_create_ip"/>
+        <result property="isReceipt" column="is_receipt"/>
+    </resultMap>
+
     <sql id="selectTransactionOrderVo">
-        select order_id, order_num, order_amount, order_preferential_amount, paymen_channel, paymen_channel_id, remark, create_by, create_time, update_by, update_time        from transaction_order
+        select order_id,
+               openid,
+               is_subscribe,
+               trade_type,
+               bank_type,
+               fee_type,
+               total_fee,
+               remark,
+               settlement_total_fee,
+               create_by,
+               coupon_fee,
+               create_time,
+               cash_fee_type,
+               update_by,
+               cash_fee,
+               update_time,
+               transaction_id,
+               out_trade_no,
+               attach,
+               time_end,
+               promotion_detail,
+               commodity_id,
+               spbill_create_ip,
+               is_receipt
+        from transaction_order
     </sql>
 
     <select id="selectTransactionOrderList" parameterType="TransactionOrder" resultMap="TransactionOrderResult">
         <include refid="selectTransactionOrderVo"/>
         <where>
-                                                                                                    <if test="orderNum != null  and orderNum != ''">
-                            and order_num = #{orderNum}
-                        </if>
-                                                                                                            <if test="orderAmount != null ">
-                            and order_amount = #{orderAmount}
-                        </if>
-                                                                                                            <if test="orderPreferentialAmount != null ">
-                            and order_preferential_amount = #{orderPreferentialAmount}
-                        </if>
-                                                                                                            <if test="paymenChannel != null  and paymenChannel != ''">
-                            and paymen_channel = #{paymenChannel}
-                        </if>
-                                                                                                            <if test="paymenChannelId != null  and paymenChannelId != ''">
-                            and paymen_channel_id = #{paymenChannelId}
-                        </if>
-                                                                                                                                                                                                    </where>
+            <if test="openid != null  and openid != ''">
+                and openid = #{openid}
+            </if>
+            <if test="isSubscribe != null  and isSubscribe != ''">
+                and is_subscribe = #{isSubscribe}
+            </if>
+            <if test="tradeType != null  and tradeType != ''">
+                and trade_type = #{tradeType}
+            </if>
+            <if test="bankType != null  and bankType != ''">
+                and bank_type = #{bankType}
+            </if>
+            <if test="feeType != null  and feeType != ''">
+                and fee_type = #{feeType}
+            </if>
+            <if test="totalFee != null ">
+                and total_fee = #{totalFee}
+            </if>
+            <if test="settlementTotalFee != null ">
+                and settlement_total_fee = #{settlementTotalFee}
+            </if>
+            <if test="couponFee != null ">
+                and coupon_fee = #{couponFee}
+            </if>
+            <if test="cashFeeType != null  and cashFeeType != ''">
+                and cash_fee_type = #{cashFeeType}
+            </if>
+            <if test="cashFee != null ">
+                and cash_fee = #{cashFee}
+            </if>
+            <if test="transactionId != null  and transactionId != ''">
+                and transaction_id = #{transactionId}
+            </if>
+            <if test="attach != null  and attach != ''">
+                and attach = #{attach}
+            </if>
+            <if test="timeEnd != null ">
+                and time_end = #{timeEnd}
+            </if>
+            <if test="promotionDetail != null  and promotionDetail != ''">
+                and promotion_detail = #{promotionDetail}
+            </if>
+            <if test="commodityId != null ">
+                and commodity_id = #{commodityId}
+            </if>
+            <if test="spbillCreateIp != null ">
+                and spbill_create_ip = #{spbillCreateIp}
+            </if>
+            <if test="isReceipt != null  and isReceipt != ''">
+                and is_receipt = #{isReceipt}
+            </if>
+        </where>
     </select>
 
     <select id="selectTransactionOrderById" parameterType="Long"
             resultMap="TransactionOrderResult">
-                    <include refid="selectTransactionOrderVo"/>
-            where order_id = #{orderId}
-            </select>
+        <include refid="selectTransactionOrderVo"/>
+        where order_id = #{orderId}
+    </select>
 
     <insert id="insertTransactionOrder" parameterType="TransactionOrder" useGeneratedKeys="true"
             keyProperty="orderId">
         insert into transaction_order
         <trim prefix="(" suffix=")" suffixOverrides=",">
-                                                                            <if test="orderNum != null and orderNum != ''">order_num,
-                    </if>
-                                                                <if test="orderAmount != null">order_amount,
-                    </if>
-                                                                <if test="orderPreferentialAmount != null">order_preferential_amount,
-                    </if>
-                                                                <if test="paymenChannel != null and paymenChannel != ''">paymen_channel,
-                    </if>
-                                                                <if test="paymenChannelId != null and paymenChannelId != ''">paymen_channel_id,
-                    </if>
-                                                                <if test="remark != null">remark,
-                    </if>
-                                                                <if test="createBy != null and createBy != ''">create_by,
-                    </if>
-                                                                <if test="createTime != null">create_time,
-                    </if>
-                                                                <if test="updateBy != null">update_by,
-                    </if>
-                                                                <if test="updateTime != null">update_time,
-                    </if>
-                                    </trim>
+            <if test="openid != null and openid != ''">openid,
+            </if>
+            <if test="isSubscribe != null and isSubscribe != ''">is_subscribe,
+            </if>
+            <if test="tradeType != null and tradeType != ''">trade_type,
+            </if>
+            <if test="bankType != null and bankType != ''">bank_type,
+            </if>
+            <if test="feeType != null and feeType != ''">fee_type,
+            </if>
+            <if test="totalFee != null">total_fee,
+            </if>
+            <if test="remark != null">remark,
+            </if>
+            <if test="settlementTotalFee != null">settlement_total_fee,
+            </if>
+            <if test="createBy != null and createBy != ''">create_by,
+            </if>
+            <if test="couponFee != null">coupon_fee,
+            </if>
+            <if test="createTime != null">create_time,
+            </if>
+            <if test="cashFeeType != null and cashFeeType != ''">cash_fee_type,
+            </if>
+            <if test="updateBy != null">update_by,
+            </if>
+            <if test="cashFee != null">cash_fee,
+            </if>
+            <if test="updateTime != null">update_time,
+            </if>
+            <if test="transactionId != null and transactionId != ''">transaction_id,
+            </if>
+            <if test="outTradeNo != null">out_trade_no,
+            </if>
+            <if test="attach != null and attach != ''">attach,
+            </if>
+            <if test="timeEnd != null">time_end,
+            </if>
+            <if test="promotionDetail != null and promotionDetail != ''">promotion_detail,
+            </if>
+            <if test="commodityId != null">commodity_id,
+            </if>
+            <if test="spbillCreateIp != null">spbill_create_ip,
+            </if>
+            <if test="isReceipt != null and isReceipt != ''">is_receipt,
+            </if>
+        </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-                                                                            <if test="orderNum != null and orderNum != ''">#{orderNum},
-                    </if>
-                                                                <if test="orderAmount != null">#{orderAmount},
-                    </if>
-                                                                <if test="orderPreferentialAmount != null">#{orderPreferentialAmount},
-                    </if>
-                                                                <if test="paymenChannel != null and paymenChannel != ''">#{paymenChannel},
-                    </if>
-                                                                <if test="paymenChannelId != null and paymenChannelId != ''">#{paymenChannelId},
-                    </if>
-                                                                <if test="remark != null">#{remark},
-                    </if>
-                                                                <if test="createBy != null and createBy != ''">#{createBy},
-                    </if>
-                                                                <if test="createTime != null">#{createTime},
-                    </if>
-                                                                <if test="updateBy != null">#{updateBy},
-                    </if>
-                                                                <if test="updateTime != null">#{updateTime},
-                    </if>
-                                    </trim>
+            <if test="openid != null and openid != ''">#{openid},
+            </if>
+            <if test="isSubscribe != null and isSubscribe != ''">#{isSubscribe},
+            </if>
+            <if test="tradeType != null and tradeType != ''">#{tradeType},
+            </if>
+            <if test="bankType != null and bankType != ''">#{bankType},
+            </if>
+            <if test="feeType != null and feeType != ''">#{feeType},
+            </if>
+            <if test="totalFee != null">#{totalFee},
+            </if>
+            <if test="remark != null">#{remark},
+            </if>
+            <if test="settlementTotalFee != null">#{settlementTotalFee},
+            </if>
+            <if test="createBy != null and createBy != ''">#{createBy},
+            </if>
+            <if test="couponFee != null">#{couponFee},
+            </if>
+            <if test="createTime != null">#{createTime},
+            </if>
+            <if test="cashFeeType != null and cashFeeType != ''">#{cashFeeType},
+            </if>
+            <if test="updateBy != null">#{updateBy},
+            </if>
+            <if test="cashFee != null">#{cashFee},
+            </if>
+            <if test="updateTime != null">#{updateTime},
+            </if>
+            <if test="transactionId != null and transactionId != ''">#{transactionId},
+            </if>
+            <if test="outTradeNo != null">#{outTradeNo},
+            </if>
+            <if test="attach != null and attach != ''">#{attach},
+            </if>
+            <if test="timeEnd != null">#{timeEnd},
+            </if>
+            <if test="promotionDetail != null and promotionDetail != ''">#{promotionDetail},
+            </if>
+            <if test="commodityId != null">#{commodityId},
+            </if>
+            <if test="spbillCreateIp != null">#{spbillCreateIp},
+            </if>
+            <if test="isReceipt != null and isReceipt != ''">#{isReceipt},
+            </if>
+        </trim>
     </insert>
 
     <update id="updateTransactionOrder" parameterType="TransactionOrder">
         update transaction_order
         <trim prefix="SET" suffixOverrides=",">
-                                                                            <if test="orderNum != null and orderNum != ''">order_num =
-                        #{orderNum},
-                    </if>
-                                                                <if test="orderAmount != null">order_amount =
-                        #{orderAmount},
-                    </if>
-                                                                <if test="orderPreferentialAmount != null">order_preferential_amount =
-                        #{orderPreferentialAmount},
-                    </if>
-                                                                <if test="paymenChannel != null and paymenChannel != ''">paymen_channel =
-                        #{paymenChannel},
-                    </if>
-                                                                <if test="paymenChannelId != null and paymenChannelId != ''">paymen_channel_id =
-                        #{paymenChannelId},
-                    </if>
-                                                                <if test="remark != null">remark =
-                        #{remark},
-                    </if>
-                                                                <if test="createBy != null and createBy != ''">create_by =
-                        #{createBy},
-                    </if>
-                                                                <if test="createTime != null">create_time =
-                        #{createTime},
-                    </if>
-                                                                <if test="updateBy != null">update_by =
-                        #{updateBy},
-                    </if>
-                                                                <if test="updateTime != null">update_time =
-                        #{updateTime},
-                    </if>
-                                    </trim>
+            <if test="openid != null and openid != ''">openid =
+                #{openid},
+            </if>
+            <if test="isSubscribe != null and isSubscribe != ''">is_subscribe =
+                #{isSubscribe},
+            </if>
+            <if test="tradeType != null and tradeType != ''">trade_type =
+                #{tradeType},
+            </if>
+            <if test="bankType != null and bankType != ''">bank_type =
+                #{bankType},
+            </if>
+            <if test="feeType != null and feeType != ''">fee_type =
+                #{feeType},
+            </if>
+            <if test="totalFee != null">total_fee =
+                #{totalFee},
+            </if>
+            <if test="remark != null">remark =
+                #{remark},
+            </if>
+            <if test="settlementTotalFee != null">settlement_total_fee =
+                #{settlementTotalFee},
+            </if>
+            <if test="createBy != null and createBy != ''">create_by =
+                #{createBy},
+            </if>
+            <if test="couponFee != null">coupon_fee =
+                #{couponFee},
+            </if>
+            <if test="createTime != null">create_time =
+                #{createTime},
+            </if>
+            <if test="cashFeeType != null and cashFeeType != ''">cash_fee_type =
+                #{cashFeeType},
+            </if>
+            <if test="updateBy != null">update_by =
+                #{updateBy},
+            </if>
+            <if test="cashFee != null">cash_fee =
+                #{cashFee},
+            </if>
+            <if test="updateTime != null">update_time =
+                #{updateTime},
+            </if>
+            <if test="transactionId != null and transactionId != ''">transaction_id =
+                #{transactionId},
+            </if>
+            <if test="outTradeNo != null">out_trade_no =
+                #{outTradeNo},
+            </if>
+            <if test="attach != null and attach != ''">attach =
+                #{attach},
+            </if>
+            <if test="timeEnd != null">time_end =
+                #{timeEnd},
+            </if>
+            <if test="promotionDetail != null and promotionDetail != ''">promotion_detail =
+                #{promotionDetail},
+            </if>
+            <if test="commodityId != null">commodity_id =
+                #{commodityId},
+            </if>
+            <if test="spbillCreateIp != null">spbill_create_ip =
+                #{spbillCreateIp},
+            </if>
+            <if test="isReceipt != null and isReceipt != ''">is_receipt =
+                #{isReceipt},
+            </if>
+        </trim>
         where order_id = #{orderId}
     </update>
 
     <delete id="deleteTransactionOrderById" parameterType="Long">
-        delete from transaction_order where order_id = #{orderId}
+        delete
+        from transaction_order
+        where order_id = #{orderId}
     </delete>
 
     <delete id="deleteTransactionOrderByIds" parameterType="String">
@@ -145,4 +311,4 @@
             #{orderId}
         </foreach>
     </delete>
-    </mapper>
+</mapper>

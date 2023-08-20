@@ -1,0 +1,46 @@
+
+D
+java:S4274"(Replace this assert with a proper check.( Í¨öøÿÿÿÿ
+D
+java:S4274"(Replace this assert with a proper check.(ñŸ¦‰þÿÿÿÿ
+?
+java:S4274‘"(Replace this assert with a proper check.(À«œ¾
+?
+java:S4274’"(Replace this assert with a proper check.(ÆªÀ
+?
+java:S4274“"(Replace this assert with a proper check.(‚õÛ
+?
+java:S4274”"(Replace this assert with a proper check.(÷Ü•º
+D
+java:S4274•"(Replace this assert with a proper check.(õÓï¡øÿÿÿÿ
+>
+java:S4274–"(Replace this assert with a proper check.(ž‰¬f
+>
+java:S1125 "'Remove the unnecessary boolean literal.(¢·£Ä
+=
+java:S1125¡"'Remove the unnecessary boolean literal.(òÝ•
+>
+java:S1125¢"'Remove the unnecessary boolean literal.(¼¶ÞÞ
+W	java:S125Ì"<This block of commented-out lines of code should be removed.(ù‚ºÿÿÿÿÿ
+P
+java:S2864"4Iterate over the "entrySet" instead of the "keySet".(”ýÝîùÿÿÿÿ
+i
+java:S3776®"RRefactor this method to reduce its Cognitive Complexity from 50 to the 15 allowed.(‚Þÿê
+C
+java:S1125´"'Remove the unnecessary boolean literal.(þä‹âøÿÿÿÿ
+R	java:S125Ä"<This block of commented-out lines of code should be removed.(Ò»´
+?
+java:S1659Õ"(Declare "paramValue" on a separate line.(ŸÉÛÚ
+W	java:S125Ú"<This block of commented-out lines of code should be removed.(ñç¤Üÿÿÿÿÿ
+d
+java:S6019#"IFix this reluctant quantifier that will only ever match the empty string.(¨á÷þÿÿÿÿ
+b
+java:S1192w"GDefine a constant instead of duplicating this literal "strong" 3 times.(¾ØñÑýÿÿÿÿ
+K
+java:S1066´"/Merge this if statement with the enclosing one.(þä‹âøÿÿÿÿ
+K
+java:S1066µ"/Merge this if statement with the enclosing one.(„–…Œûÿÿÿÿ
+k	java:S117i"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ðÞïƒùÿÿÿÿ
+k	java:S117n"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ®ÓÊýÿÿÿÿ
+e	java:S117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š´‰D
+l	java:S117©"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÐá›øÿÿÿÿ

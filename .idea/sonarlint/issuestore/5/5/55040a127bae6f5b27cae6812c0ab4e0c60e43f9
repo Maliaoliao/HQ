@@ -1,0 +1,11 @@
+
+[	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(œ²âý
+[	java:S112@"FDefine and throw a dedicated exception instead of using a generic one.(ý‘òÞ
+[	java:S112X"FDefine and throw a dedicated exception instead of using a generic one.(™õ—ú
+`	java:S112U"FDefine and throw a dedicated exception instead of using a generic one.(èÝÎÑþÿÿÿÿ
+n
+java:S3252]"SUse static access with "org.apache.commons.lang3.StringUtils" for "substringAfter".(Þæ¬Úþÿÿÿÿ
+m
+java:S3252_"WUse static access with "org.apache.commons.lang3.StringUtils" for "substringAfterLast".(ð³±Ò
+@
+java:S54114"*Use the primitive boolean expression here.(î­ÁÂ

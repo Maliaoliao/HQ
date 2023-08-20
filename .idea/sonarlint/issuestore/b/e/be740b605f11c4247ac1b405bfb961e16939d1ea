@@ -1,0 +1,11 @@
+
+W	java:S125‡"<This block of commented-out lines of code should be removed.(Šğâúÿÿÿÿ
+R	java:S125¶"<This block of commented-out lines of code should be removed.(‘ßÚÇ
+T	java:S106Ã"9Replace this use of System.out or System.err by a logger.(íè‚‡ùÿÿÿÿ
+R	java:S125Â"<This block of commented-out lines of code should be removed.(›ŞØ»
+O	java:S106Ä"9Replace this use of System.out or System.err by a logger.(‰ôÂÔ
+R	java:S125æ"<This block of commented-out lines of code should be removed.(“º•Ÿ
+W	java:S125ê"<This block of commented-out lines of code should be removed.(ÜÿÊ¤ùÿÿÿÿ
+W	java:S125’"<This block of commented-out lines of code should be removed.(üÁ¦ğøÿÿÿÿ
+g
+java:S1192"PDefine a constant instead of duplicating this literal "è®¾å¤‡ä¸å­˜åœ¨" 4 times.(í¦íª

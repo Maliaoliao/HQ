@@ -1,14 +1,13 @@
 package com.hq.system.service;
 
-import java.util.List;
-
 import com.hq.system.domain.TransactionCommodity;
 
+import java.util.List;
 /**
  * 【请填写功能名称】Service接口
  *
  * @author wxy
- * @date 2021-10-28
+ * @date 2023-01-07
  */
 public interface ITransactionCommodityService {
     /**

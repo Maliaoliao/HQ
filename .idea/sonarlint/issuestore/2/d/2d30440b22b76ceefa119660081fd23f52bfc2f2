@@ -1,0 +1,28 @@
+
+P
+java:S1118":Add a private constructor to hide the implicit public one.(Å±ş
+9
+java:S2119F"Save and re-use this "Random".(šŸ«íøÿÿÿÿ
+3
+java:S2119["Save and re-use this "Random".(¼İÅf
+@
+java:S1905¯")Remove this unnecessary cast to "double".(öÕ£§
+?
+java:S1905°")Remove this unnecessary cast to "double".(©»ÿ~
+?
+java:S1905°")Remove this unnecessary cast to "double".(©»ÿ~
+W	java:S125½"<This block of commented-out lines of code should be removed.(øÒÆşÿÿÿÿ
+@
+java:S1905Ã")Remove this unnecessary cast to "double".(öÕ£§
+?
+java:S1905Ä")Remove this unnecessary cast to "double".(©»ÿ~
+?
+java:S1905Ä")Remove this unnecessary cast to "double".(©»ÿ~
+]
+java:S2184y"BCast one of the operands of this addition operation to a "double".(à·Áàúÿÿÿÿ
+]
+java:S2184y"BCast one of the operands of this division operation to a "double".(à·Áàúÿÿÿÿ
+N
+java:S2589Æ"7Remove this expression which always evaluates to "true"(Å…áı
+N
+java:S2589²"7Remove this expression which always evaluates to "true"(Å…áı

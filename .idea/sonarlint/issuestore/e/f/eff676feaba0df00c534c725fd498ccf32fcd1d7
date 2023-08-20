@@ -1,0 +1,19 @@
+
+U
+java:S1118":Add a private constructor to hide the implicit public one.(Şı£˜üÿÿÿÿ
+A
+java:S1168,"+Return an empty collection instead of null.(¥¹ï
+m
+java:S3776M"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(•­ªûÿÿÿÿ
+f
+java:S3252Q"PUse static access with "org.apache.commons.lang3.StringUtils" for "containsAny".(¯¿ê¾
+c
+java:S3252a"MUse static access with "org.apache.commons.lang3.StringUtils" for "stripEnd".(´´
+h
+java:S3776l"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(“·±Ò
+k
+java:S3252p"PUse static access with "org.apache.commons.lang3.StringUtils" for "containsAny".(ÆŒ¤³ùÿÿÿÿ
+d
+java:S3252€"MUse static access with "org.apache.commons.lang3.StringUtils" for "stripEnd".(´´
+w
+java:S1488)"aImmediately return this expression instead of assigning it to the temporary variable "dictDatas".(úßë¹

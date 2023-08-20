@@ -2340,20 +2340,33 @@ INSERT INTO `t_user_login_log` VALUES (1724, '未授权用户', 200029, '013pCmF
 -- ----------------------------
 -- Records of transaction_order 订单表
 -- ----------------------------
-DROP TABLE IF EXISTS `transaction_order`;
-CREATE TABLE `transaction_order`  (
-                                      `order_id` bigint(0) NOT NULL AUTO_INCREMENT COMMENT '订单ID',
-                                      `order_num` VARCHAR (64)   NOT NULL COMMENT '订单关联设备编号',
-                                      `order_amount` INT   NOT NULL COMMENT '订单金额(分)',
-                                      `order_preferential_amount` INT  NULL COMMENT '订单优惠金额',
-                                      `paymen_channel` CHAR NOT NULL COMMENT '支付渠道',
-                                      `paymen_channel_id` varchar(64)  NOT NULL COMMENT '支付渠道唯一编码',
-                                      `remark` varchar(500)   NULL DEFAULT NULL COMMENT '备注',
-                                      `create_by` varchar(64)   NOT NULL DEFAULT '' COMMENT '创建者',
-                                      `create_time` DATETIME NOT NULL COMMENT '创建时间',
-                                      `update_by` varchar(64)   NULL COMMENT '更新者',
-                                      `update_time` DATETIME NULL COMMENT '更新时间',
-                                      PRIMARY KEY (`order_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1725 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
-
-SET FOREIGN_KEY_CHECKS = 1;
+select * from transaction_order;
+create table transaction_order
+(
+    order_id             bigint auto_increment comment '订单ID',
+    openid               varchar(64) not null comment '用户标识',
+    is_subscribe         char(1)     not null comment '是否关注公众账号',
+    trade_type           varchar(16) not null comment '交易类型',
+    bank_type            varchar(16) not null comment '付款银行',
+    fee_type             varchar(16) not null comment '货币类型',
+    total_fee            int         not null comment '订单金额',
+    settlement_total_fee int comment '应结订单金额',
+    coupon_fee           int comment '代金券金额',
+    cash_fee_type        varchar(16) not null comment '现金支付货币类型',
+    cash_fee             int         not null comment '现金支付金额',
+    transaction_id       varchar(64) not null comment '微信支付订单号',
+    out_trade_no         varchar(64) not null comment '商户订单号',
+    attach               varchar(64) not null comment '商家数据包',
+    time_end             datetime    not null comment '支付完成时间',
+    promotion_detail     text        not null comment '营销详情',
+    commodity_id         bigint      not null comment '商品ID',
+    spbill_create_ip     bigint      not null comment '终端ID',
+    is_receipt           char(1)     not null comment '订单是否开发票',
+    update_time          datetime    not null comment '更新时间',
+    update_by            varchar(64) not null comment '更新者',
+    create_time          datetime    not null comment '创建时间',
+    create_by            varchar(64) not null comment '创建者',
+    remark               varchar(500) comment '备注',
+    primary key (order_id, out_trade_no)
+)
+    comment '交易订单表' charset = utf8;

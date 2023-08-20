@@ -1,5 +1,7 @@
 package com.hq.system.test;
 
+import com.alibaba.fastjson.JSONObject;
+
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +46,20 @@ public static int countWorkDay(int year,int month) {
 }
 
     public static void main(String[] args) {
-        System.out.println(countWorkDay(2021, 10));
+        /*String res = "true";
+        if(!res.equals("true")){
+            System.out.println(1);
+            return;
+        }
+        System.out.println(2);*/
+
+        JSONObject json = new JSONObject();
+        json.put("userid", 1);
+        json.put("phone", 2);
+        Map<String,String> map = new HashMap<>();
+        map.put("A","A");
+        json.put("order",map);
+        System.out.println(json.toJSONString());
     }
 
     public Map<Object, int[]> getList(){
@@ -68,5 +83,7 @@ public static int countWorkDay(int year,int month) {
         map.put("2022",o);
         return o;
     }
+
+
 
 }

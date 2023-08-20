@@ -6,28 +6,42 @@
 
     <resultMap type="TransactionCommodity" id="TransactionCommodityResult">
         <result property="commodityId" column="commodity_id"/>
-        <result property="commodityCode" column="commodity_code"/>
-        <result property="commodityName" column="commodity_name"/>
-        <result property="commodityPrice" column="commodity_price"/>
-        <result property="commodityPicture" column="commodity_picture"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+        <result property="kitchenId" column="kitchen_id"/>
+        <result property="boxNum" column="box_num"/>
+        <result property="commodityEnabled" column="commodity_enabled"/>
         <result property="remark" column="remark"/>
+        <result property="mainCourse" column="main_course"/>
         <result property="createBy" column="create_by"/>
+        <result property="minorDish" column="minor_dish"/>
         <result property="createTime" column="create_time"/>
+        <result property="sideDish" column="side_dish"/>
         <result property="updateBy" column="update_by"/>
+        <result property="stapleFood" column="staple_food"/>
         <result property="updateTime" column="update_time"/>
+        <result property="description" column="description"/>
+        <result property="picture" column="picture"/>
     </resultMap>
 
     <sql id="selectTransactionCommodityVo">
         select commodity_id,
-               commodity_code,
-               commodity_name,
-               commodity_price,
-               commodity_picture,
+               name,
+               price,
+               kitchen_id,
+               box_num,
+               commodity_enabled,
                remark,
+               main_course,
                create_by,
+               minor_dish,
                create_time,
+               side_dish,
                update_by,
-               update_time
+               staple_food,
+               update_time,
+               description,
+               picture
         from transaction_commodity
     </sql>
 
@@ -35,17 +49,38 @@
             resultMap="TransactionCommodityResult">
         <include refid="selectTransactionCommodityVo"/>
         <where>
-            <if test="commodityCode != null  and commodityCode != ''">
-                and commodity_code = #{commodityCode}
+            <if test="name != null  and name != ''">
+                and name like concat('%', #{name}, '%')
             </if>
-            <if test="commodityName != null  and commodityName != ''">
-                and commodity_name like concat('%', #{commodityName}, '%')
+            <if test="price != null ">
+                and price = #{price}
             </if>
-            <if test="commodityPrice != null ">
-                and commodity_price = #{commodityPrice}
+            <if test="kitchenId != null ">
+                and kitchen_id = #{kitchenId}
             </if>
-            <if test="commodityPicture != null  and commodityPicture != ''">
-                and commodity_picture = #{commodityPicture}
+            <if test="boxNum != null ">
+                and box_num = #{boxNum}
+            </if>
+            <if test="commodityEnabled != null  and commodityEnabled != ''">
+                and commodity_enabled = #{commodityEnabled}
+            </if>
+            <if test="mainCourse != null  and mainCourse != ''">
+                and main_course = #{mainCourse}
+            </if>
+            <if test="minorDish != null  and minorDish != ''">
+                and minor_dish = #{minorDish}
+            </if>
+            <if test="sideDish != null  and sideDish != ''">
+                and side_dish = #{sideDish}
+            </if>
+            <if test="stapleFood != null  and stapleFood != ''">
+                and staple_food = #{stapleFood}
+            </if>
+            <if test="description != null  and description != ''">
+                and description = #{description}
+            </if>
+            <if test="picture != null  and picture != ''">
+                and picture = #{picture}
             </if>
         </where>
     </select>
@@ -60,43 +95,71 @@
             keyProperty="commodityId">
         insert into transaction_commodity
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="commodityCode != null and commodityCode != ''">commodity_code,
+            <if test="name != null and name != ''">name,
             </if>
-            <if test="commodityName != null and commodityName != ''">commodity_name,
+            <if test="price != null">price,
             </if>
-            <if test="commodityPrice != null">commodity_price,
+            <if test="kitchenId != null">kitchen_id,
             </if>
-            <if test="commodityPicture != null">commodity_picture,
+            <if test="boxNum != null">box_num,
+            </if>
+            <if test="commodityEnabled != null and commodityEnabled != ''">commodity_enabled,
             </if>
             <if test="remark != null">remark,
             </if>
+            <if test="mainCourse != null and mainCourse != ''">main_course,
+            </if>
             <if test="createBy != null and createBy != ''">create_by,
+            </if>
+            <if test="minorDish != null and minorDish != ''">minor_dish,
             </if>
             <if test="createTime != null">create_time,
             </if>
+            <if test="sideDish != null and sideDish != ''">side_dish,
+            </if>
             <if test="updateBy != null">update_by,
+            </if>
+            <if test="stapleFood != null and stapleFood != ''">staple_food,
             </if>
             <if test="updateTime != null">update_time,
             </if>
+            <if test="description != null and description != ''">description,
+            </if>
+            <if test="picture != null">picture,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="commodityCode != null and commodityCode != ''">#{commodityCode},
+            <if test="name != null and name != ''">#{name},
             </if>
-            <if test="commodityName != null and commodityName != ''">#{commodityName},
+            <if test="price != null">#{price},
             </if>
-            <if test="commodityPrice != null">#{commodityPrice},
+            <if test="kitchenId != null">#{kitchenId},
             </if>
-            <if test="commodityPicture != null">#{commodityPicture},
+            <if test="boxNum != null">#{boxNum},
+            </if>
+            <if test="commodityEnabled != null and commodityEnabled != ''">#{commodityEnabled},
             </if>
             <if test="remark != null">#{remark},
             </if>
+            <if test="mainCourse != null and mainCourse != ''">#{mainCourse},
+            </if>
             <if test="createBy != null and createBy != ''">#{createBy},
+            </if>
+            <if test="minorDish != null and minorDish != ''">#{minorDish},
             </if>
             <if test="createTime != null">#{createTime},
             </if>
+            <if test="sideDish != null and sideDish != ''">#{sideDish},
+            </if>
             <if test="updateBy != null">#{updateBy},
             </if>
+            <if test="stapleFood != null and stapleFood != ''">#{stapleFood},
+            </if>
             <if test="updateTime != null">#{updateTime},
+            </if>
+            <if test="description != null and description != ''">#{description},
+            </if>
+            <if test="picture != null">#{picture},
             </if>
         </trim>
     </insert>
@@ -104,32 +167,53 @@
     <update id="updateTransactionCommodity" parameterType="TransactionCommodity">
         update transaction_commodity
         <trim prefix="SET" suffixOverrides=",">
-            <if test="commodityCode != null and commodityCode != ''">commodity_code =
-                #{commodityCode},
+            <if test="name != null and name != ''">name =
+                #{name},
             </if>
-            <if test="commodityName != null and commodityName != ''">commodity_name =
-                #{commodityName},
+            <if test="price != null">price =
+                #{price},
             </if>
-            <if test="commodityPrice != null">commodity_price =
-                #{commodityPrice},
+            <if test="kitchenId != null">kitchen_id =
+                #{kitchenId},
             </if>
-            <if test="commodityPicture != null">commodity_picture =
-                #{commodityPicture},
+            <if test="boxNum != null">box_num =
+                #{boxNum},
+            </if>
+            <if test="commodityEnabled != null and commodityEnabled != ''">commodity_enabled =
+                #{commodityEnabled},
             </if>
             <if test="remark != null">remark =
                 #{remark},
             </if>
+            <if test="mainCourse != null and mainCourse != ''">main_course =
+                #{mainCourse},
+            </if>
             <if test="createBy != null and createBy != ''">create_by =
                 #{createBy},
+            </if>
+            <if test="minorDish != null and minorDish != ''">minor_dish =
+                #{minorDish},
             </if>
             <if test="createTime != null">create_time =
                 #{createTime},
             </if>
+            <if test="sideDish != null and sideDish != ''">side_dish =
+                #{sideDish},
+            </if>
             <if test="updateBy != null">update_by =
                 #{updateBy},
             </if>
+            <if test="stapleFood != null and stapleFood != ''">staple_food =
+                #{stapleFood},
+            </if>
             <if test="updateTime != null">update_time =
                 #{updateTime},
+            </if>
+            <if test="description != null and description != ''">description =
+                #{description},
+            </if>
+            <if test="picture != null">picture =
+                #{picture},
             </if>
         </trim>
         where commodity_id = #{commodityId}

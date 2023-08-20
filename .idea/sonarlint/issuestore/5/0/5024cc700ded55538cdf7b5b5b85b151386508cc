@@ -1,0 +1,11 @@
+
+U
+java:S1118":Add a private constructor to hide the implicit public one.(“³±ûÿÿÿÿ
+o
+java:S1104‚"SMake wxAppId a static final constant or non-public and provide accessors if needed.(Ó’¹†üÿÿÿÿ
+s
+java:S1104ƒ"WMake wxAppSecret a static final constant or non-public and provide accessors if needed.(˜Ùç¡øÿÿÿÿ
+I
+java:S1444‚"-Make this "public static wxAppId" field final(Ó’¹†üÿÿÿÿ
+M
+java:S1444ƒ"1Make this "public static wxAppSecret" field final(˜Ùç¡øÿÿÿÿ

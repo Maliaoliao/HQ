@@ -1,0 +1,15 @@
+
+a	java:S112’"FDefine and throw a dedicated exception instead of using a generic one.(ß¥ÕÃøÿÿÿÿ
+a	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(¬©€ÿÿÿÿÿ
+œ
+java:S11860"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(°‡Ùüúÿÿÿÿ
+ˆ
+java:S1130’"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ß¥ÕÃøÿÿÿÿ
+ˆ
+java:S1130 "lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¬©€ÿÿÿÿÿ
+M
+java:S1751É"6Remove this "return" statement or make it conditional.(¤Ğ‚ó
+M
+java:S1751Ï"6Remove this "return" statement or make it conditional.(ÚöÄ
+8
+java:S1643´"Use a StringBuilder instead.(µÛÜ•ùÿÿÿÿ

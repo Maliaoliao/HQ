@@ -133,7 +133,12 @@ xss:
 # 公众号配置(必填)
 wx:
   miniapp:
-    appid: appid #  #
+    appid: wx8888888888888888
+    certpath: /path/to/apiclient_cert.p12
+    mchid: 1900000109
+    key: 1900000109
+    connecttimeoutms: 8000
+    readTimeoutms: 10000
     appSecret: appSecret # #
     config-storage:
       type: Memory                     # 配置类型: Memory(默认), Jedis, RedisTemplate

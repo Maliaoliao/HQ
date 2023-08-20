@@ -1,0 +1,29 @@
+
+8
+java:S23864"Make this member "protected".(Ø»üØüÿÿÿÿ
+3
+java:S23869"Make this member "protected".(İ”†­
+8
+java:S2386>"Make this member "protected".(Ùøùßÿÿÿÿÿ
+3
+java:S2386C"Make this member "protected".(ıÀ÷Ó
+3
+java:S2386I"Make this member "protected".(˜°å 
+8
+java:S2386N"Make this member "protected".(ô±ªòıÿÿÿÿ
+8
+java:S2386T"Make this member "protected".(™ô¶îüÿÿÿÿ
+8
+java:S2386Z"Make this member "protected".(çåšÿÿÿÿÿ
+3
+java:S2386_"Make this member "protected".(Óœßˆ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(›ÜöÔÿÿÿÿÿ
+`
+java:S1192I"JDefine a constant instead of duplicating this literal "create_by" 3 times.(˜°å 
+n
+java:S1192>"SUse already-defined constant 'HTML_DATETIME' instead of duplicating its value here.(Ùøùßÿÿÿÿÿ
+_
+java:S1192I"IDefine a constant instead of duplicating this literal "del_flag" 3 times.(˜°å 
+b
+java:S1192I"LDefine a constant instead of duplicating this literal "create_time" 3 times.(˜°å 

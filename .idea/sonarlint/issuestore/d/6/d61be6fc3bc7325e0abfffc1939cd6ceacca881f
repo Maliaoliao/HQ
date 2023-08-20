@@ -1,0 +1,8 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÇûšåŠ0
+W
+java:S1118":Add a private constructor to hide the implicit public one.(«çø¶8ÌûšåŠ0
+z
+java:S3252"]Use static access with "org.apache.velocity.runtime.RuntimeConstants" for "ENCODING_DEFAULT".(÷©øÜ8ÓûšåŠ0
+y
+java:S3252"\Use static access with "org.apache.velocity.runtime.RuntimeConstants" for "OUTPUT_ENCODING".(š¼Ôæ8ÔûšåŠ0

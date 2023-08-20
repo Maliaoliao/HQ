@@ -1,0 +1,7 @@
+
+@
+java:S1905:"*Remove this unnecessary cast to "SysDept".(é ’Ä
+e
+java:S3252<"JUse static access with "org.apache.commons.lang3.StringUtils" for "split".(°øÊ®˝ˇˇˇˇ
+f
+java:S3252z"KUse static access with "org.apache.commons.lang3.StringUtils" for "equals".(õ∑êÊ˙ˇˇˇˇ

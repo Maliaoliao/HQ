@@ -1,14 +1,14 @@
 package com.hq.system.mapper;
 
-import java.util.List;
-
 import com.hq.system.domain.TransactionCommodity;
+
+import java.util.List;
 
 /**
  * 【请填写功能名称】Mapper接口
  *
  * @author wxy
- * @date 2021-10-28
+ * @date 2023-01-07
  */
 public interface TransactionCommodityMapper {
     /**

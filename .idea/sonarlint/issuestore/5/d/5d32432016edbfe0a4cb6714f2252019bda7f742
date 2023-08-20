@@ -1,0 +1,14 @@
+
+`	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(’åíÿÿÿÿÿ
+‡
+java:S1130 "lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(’åíÿÿÿÿÿ
+a
+java:S1612!"FReplace this lambda with method reference 'RedisServerCommands::info'.(šÆ¥éÿÿÿÿÿ
+c
+java:S1612#"HReplace this lambda with method reference 'RedisServerCommands::dbSize'.(¹Æßğùÿÿÿÿ
+k
+java:S3252-"PUse static access with "org.apache.commons.lang3.StringUtils" for "removeStart".(´Š’øşÿÿÿÿ
+k
+java:S3252."UUse static access with "org.apache.commons.lang3.StringUtils" for "substringBetween".(„‰‡°
+e
+java:S2259*"JA "NullPointerException" could be thrown; "commandStats" is nullable here.(±îúÿÿÿÿ

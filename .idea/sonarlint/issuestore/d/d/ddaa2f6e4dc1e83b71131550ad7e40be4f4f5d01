@@ -1,0 +1,25 @@
+
+X
+java:S2696+"6Make the enclosing method "static" or remove this set.(Ö‘†­ıÿÿÿÿ8æ÷¡™•0
+X
+java:S26964"6Make the enclosing method "static" or remove this set.(£òáŠÿÿÿÿÿ8è÷¡™•0
+X
+java:S2696="6Make the enclosing method "static" or remove this set.(«„½øÿÿÿÿ8é÷¡™•0
+X
+java:S2696F"6Make the enclosing method "static" or remove this set.(ˆÅŠ³úÿÿÿÿ8ê÷¡™•0
+o
+java:S1104"RMake author a static final constant or non-public and provide accessors if needed.(â°À²8ë÷¡™•0
+t
+java:S1104"WMake packageName a static final constant or non-public and provide accessors if needed.(ğÌûŸ8ë÷¡™•0
+{
+java:S1104"YMake autoRemovePre a static final constant or non-public and provide accessors if needed.(¼Î›üøÿÿÿÿ8ë÷¡™•0
+t
+java:S1104#"WMake tablePrefix a static final constant or non-public and provide accessors if needed.(å‘ÎÒ8í÷¡™•0
+I
+java:S1444",Make this "public static author" field final(â°À²8í÷¡™•0
+N
+java:S1444"1Make this "public static packageName" field final(ğÌûŸ8í÷¡™•0
+U
+java:S1444"3Make this "public static autoRemovePre" field final(¼Î›üøÿÿÿÿ8í÷¡™•0
+N
+java:S1444#"1Make this "public static tablePrefix" field final(å‘ÎÒ8í÷¡™•0

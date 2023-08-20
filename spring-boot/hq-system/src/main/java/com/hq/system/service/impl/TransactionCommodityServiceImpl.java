@@ -1,18 +1,19 @@
 package com.hq.system.service.impl;
 
 import java.util.List;
-                                                                                                        import com.hq.common.utils.DateUtils;
-            import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-    import com.hq.system.mapper.TransactionCommodityMapper;
+
+import com.hq.common.utils.DateUtils;
 import com.hq.system.domain.TransactionCommodity;
+import com.hq.system.mapper.TransactionCommodityMapper;
 import com.hq.system.service.ITransactionCommodityService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * 【请填写功能名称】Service业务层处理
  *
  * @author wxy
- * @date 2021-10-28
+ * @date 2023-01-07
  */
 @Service
 public class TransactionCommodityServiceImpl implements ITransactionCommodityService {
@@ -47,11 +48,14 @@ public class TransactionCommodityServiceImpl implements ITransactionCommoditySer
      * @param transactionCommodity 【请填写功能名称】
      * @return 结果
      */
-            @Override
+    @Override
     public int insertTransactionCommodity(TransactionCommodity transactionCommodity) {
-                                                                                                                                                                                transactionCommodity.setCreateTime(DateUtils.getNowDate());
-                                                                                return transactionCommodityMapper.insertTransactionCommodity(transactionCommodity);
-            }
+        transactionCommodity.setCreateTime(DateUtils.getNowDate());
+        transactionCommodity.setCreateBy("admin");
+        transactionCommodity.setUpdateBy("admin");
+        transactionCommodity.setUpdateTime(DateUtils.getNowDate());
+        return transactionCommodityMapper.insertTransactionCommodity(transactionCommodity);
+    }
 
     /**
      * 修改【请填写功能名称】
@@ -59,10 +63,10 @@ public class TransactionCommodityServiceImpl implements ITransactionCommoditySer
      * @param transactionCommodity 【请填写功能名称】
      * @return 结果
      */
-            @Override
+    @Override
     public int updateTransactionCommodity(TransactionCommodity transactionCommodity) {
-                                                                                                                                                                                                                        transactionCommodity.setUpdateTime(DateUtils.getNowDate());
-                                    return transactionCommodityMapper.updateTransactionCommodity(transactionCommodity);
+        transactionCommodity.setUpdateTime(DateUtils.getNowDate());
+        return transactionCommodityMapper.updateTransactionCommodity(transactionCommodity);
     }
 
     /**
@@ -71,9 +75,9 @@ public class TransactionCommodityServiceImpl implements ITransactionCommoditySer
      * @param commodityIds 需要删除的【请填写功能名称】ID
      * @return 结果
      */
-            @Override
+    @Override
     public int deleteTransactionCommodityByIds(Long[] commodityIds) {
-                return transactionCommodityMapper.deleteTransactionCommodityByIds(commodityIds);
+        return transactionCommodityMapper.deleteTransactionCommodityByIds(commodityIds);
     }
 
     /**
@@ -84,6 +88,6 @@ public class TransactionCommodityServiceImpl implements ITransactionCommoditySer
      */
     @Override
     public int deleteTransactionCommodityById(Long commodityId) {
-                return transactionCommodityMapper.deleteTransactionCommodityById(commodityId);
+        return transactionCommodityMapper.deleteTransactionCommodityById(commodityId);
     }
-    }
+}

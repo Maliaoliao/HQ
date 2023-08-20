@@ -42,6 +42,14 @@ export function delOrder(orderId) {
         method: 'delete'
     })
 }
+// 退货【请填写功能名称】
+export function returnGoods(data) {
+    return request({
+        url: '/system/order/returngoods',
+        method: 'put',
+        data: data
+    })
+}
 
 // 导出【请填写功能名称】
 export function exportOrder(query) {

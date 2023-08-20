@@ -1,0 +1,77 @@
+
+\
+java:S1118":Add a private constructor to hide the implicit public one.(¯ º¡úÿÿÿÿ8µİÛøØ0
+s
+java:S32525"QUse static access with "org.apache.commons.lang3.StringUtils" for "uncapitalize".(†˜­“ıÿÿÿÿ8ºİÛøØ0
+q
+java:S32527"OUse static access with "org.apache.commons.lang3.StringUtils" for "capitalize".(½¼Øöûÿÿÿÿ8»İÛøØ0
+b
+java:S3252N"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ÂìœÍ8¿İÛøØ0
+b
+java:S3252U"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ÂìœÍ8ÂİÛøØ0
+n
+java:S3252q"QUse static access with "org.apache.commons.lang3.StringUtils" for "uncapitalize".(ô¤†¶8ÆİÛøØ0
+m
+java:S3252s"QUse static access with "org.apache.commons.lang3.StringUtils" for "uncapitalize".(«ş„8ÇİÛøØ0
+D
+java:S1075 "&Remove this hard-coded path-delimiter.(Ô˜ü8ÏİÛøØ0
+j
+java:S3252 "LUse static access with "org.apache.commons.lang3.StringUtils" for "replace".(Ô˜ü8ÏİÛøØ0
+C
+java:S1075¡"&Remove this hard-coded path-delimiter.(š²õG8ÏİÛøØ0
+n
+java:S3252§"KUse static access with "org.apache.commons.lang3.StringUtils" for "equals".(ıƒ­Ùıÿÿÿÿ8ĞİÛøØ0
+h
+java:S3252…"JUse static access with "org.apache.commons.lang3.StringUtils" for "EMPTY".(„›ÎÕ8ÚİÛøØ0
+h
+java:S3252’"JUse static access with "org.apache.commons.lang3.StringUtils" for "EMPTY".(„›ÎÕ8ÜİÛøØ0
+h
+java:S3252Ÿ"JUse static access with "org.apache.commons.lang3.StringUtils" for "EMPTY".(„›ÎÕ8İİÛøØ0
+c
+java:S3252ª"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ÂìœÍ8ŞİÛøØ0
+v
+java:S2293}"YReplace the type specification in this constructor call with the diamond operator ("<>").(İóˆ·8àİÛøØ0
+|
+java:S2293Ô"YReplace the type specification in this constructor call with the diamond operator ("<>").(‹•Šûÿÿÿÿ8àİÛøØ0
+
+java:S1319Ñ"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(ë­óìøÿÿÿÿ8âİÛøØ0
+†
+java:S1488Ç"cImmediately return this expression instead of assigning it to the temporary variable "basePackage".(‚ÚÍşşÿÿÿÿ8äİÛøØ0
+U
+java:S1118":Add a private constructor to hide the implicit public one.(¯ º¡úÿÿÿÿ
+l
+java:S32525"QUse static access with "org.apache.commons.lang3.StringUtils" for "uncapitalize".(†˜­“ıÿÿÿÿ
+j
+java:S32527"OUse static access with "org.apache.commons.lang3.StringUtils" for "capitalize".(½¼Øöûÿÿÿÿ
+[
+java:S3252N"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ÂìœÍ
+[
+java:S3252U"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ÂìœÍ
+g
+java:S3252q"QUse static access with "org.apache.commons.lang3.StringUtils" for "uncapitalize".(ô¤†¶
+f
+java:S3252s"QUse static access with "org.apache.commons.lang3.StringUtils" for "uncapitalize".(«ş„
+=
+java:S1075 "&Remove this hard-coded path-delimiter.(Ô˜ü
+c
+java:S3252 "LUse static access with "org.apache.commons.lang3.StringUtils" for "replace".(Ô˜ü
+<
+java:S1075¡"&Remove this hard-coded path-delimiter.(š²õG
+g
+java:S3252§"KUse static access with "org.apache.commons.lang3.StringUtils" for "equals".(ıƒ­Ùıÿÿÿÿ
+a
+java:S3252…"JUse static access with "org.apache.commons.lang3.StringUtils" for "EMPTY".(„›ÎÕ
+a
+java:S3252’"JUse static access with "org.apache.commons.lang3.StringUtils" for "EMPTY".(„›ÎÕ
+a
+java:S3252Ÿ"JUse static access with "org.apache.commons.lang3.StringUtils" for "EMPTY".(„›ÎÕ
+\
+java:S3252ª"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ÂìœÍ
+o
+java:S2293}"YReplace the type specification in this constructor call with the diamond operator ("<>").(İóˆ·
+u
+java:S2293Ô"YReplace the type specification in this constructor call with the diamond operator ("<>").(‹•Šûÿÿÿÿ
+‰
+java:S1319Ñ"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(ë­óìøÿÿÿÿ
+
+java:S1488Ç"cImmediately return this expression instead of assigning it to the temporary variable "basePackage".(‚ÚÍşşÿÿÿÿ

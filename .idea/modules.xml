@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/spring-boot/HQ.iml" filepath="$PROJECT_DIR$/spring-boot/HQ.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/HQ-lot.iml" filepath="$PROJECT_DIR$/.idea/HQ-lot.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-admin/hq-admin.iml" filepath="$PROJECT_DIR$/spring-boot/hq-admin/hq-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-common/hq-common.iml" filepath="$PROJECT_DIR$/spring-boot/hq-common/hq-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-framework/hq-framework.iml" filepath="$PROJECT_DIR$/spring-boot/hq-framework/hq-framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-generator/hq-generator.iml" filepath="$PROJECT_DIR$/spring-boot/hq-generator/hq-generator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-wechatpay/hq-pay.iml" filepath="$PROJECT_DIR$/spring-boot/hq-wechatpay/hq-pay.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-quartz/hq-quartz.iml" filepath="$PROJECT_DIR$/spring-boot/hq-quartz/hq-quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-system/hq-system.iml" filepath="$PROJECT_DIR$/spring-boot/hq-system/hq-system.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-boot/hq-teade/hq-teade.iml" filepath="$PROJECT_DIR$/spring-boot/hq-teade/hq-teade.iml" />
     </modules>
   </component>
 </project>

@@ -81,6 +81,11 @@ export function selectDictLabel(datas, value) {
 	return actions.join('');
 }
 
+// 格式化金额
+export function formatAmount(num, value) {
+  return (num / 100).toFixed(value)
+}
+
 // 回显数据字典（字符串数组）
 export function selectDictLabels(datas, value, separator) {
 	var actions = [];

@@ -1,0 +1,9 @@
+
+
+java:S1130‹"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(έος8ηΤκκΥ0
+{
+java:S2293B"YReplace the type specification in this constructor call with the diamond operator ("<>").(™ΊφΊύÿÿÿÿ8ςΤκκΥ0
+ƒ
+java:S1130‹"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(έος
+t
+java:S2293B"YReplace the type specification in this constructor call with the diamond operator ("<>").(™ΊφΊύÿÿÿÿ
