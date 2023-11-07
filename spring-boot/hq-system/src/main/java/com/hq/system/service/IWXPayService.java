@@ -1,6 +1,7 @@
 package com.hq.system.service;
 
 import com.hq.common.core.domain.AjaxResult;
+import com.hq.system.domain.TransactionOrder;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -68,7 +69,7 @@ public interface IWXPayService {
      * Native 预下单，返回支付码，用于用户完成支付
      * @return
      */
-    String createOrderByNative(String json);
+    String createOrderByNative(TransactionOrder transactionOrder);
 
     /**
      * 用户支付通知

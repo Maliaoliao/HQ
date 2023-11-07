@@ -1,20 +1,13 @@
 package com.hq.system.service.impl;
 
-import com.alibaba.fastjson.JSON;
 import com.hq.common.core.domain.AjaxResult;
 import com.hq.common.core.redis.RedisCache;
 import com.hq.common.enums.WxPayErrorEnum;
-import com.hq.common.utils.DateUtils;
 import com.hq.system.config.HQPayConfig;
 import com.hq.system.domain.TransactionOrder;
 import com.hq.system.service.ITransactionOrderService;
 import com.hq.system.service.IWXPayService;
 import com.hq.system.utils.MD5Util;
-import com.wechat.pay.contrib.apache.httpclient.auth.AutoUpdateCertificatesVerifier;
-import com.wechat.pay.contrib.apache.httpclient.auth.PrivateKeySigner;
-import com.wechat.pay.contrib.apache.httpclient.auth.WechatPay2Credentials;
-import com.wechat.pay.contrib.apache.httpclient.util.AesUtil;
-import com.wechat.pay.contrib.apache.httpclient.util.PemUtil;
 import com.wechat.pay.java.core.Config;
 import com.wechat.pay.java.core.RSAAutoCertificateConfig;
 import com.wechat.pay.java.core.exception.HttpException;
@@ -36,18 +29,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
 
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.security.GeneralSecurityException;
-import java.security.PrivateKey;
 import java.security.Signature;
 import java.security.cert.X509Certificate;
-import java.text.ParseException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -302,54 +289,6 @@ public class WXPayServiceImpl implements IWXPayService {
     }
 
 
-    /**
-     * 保存交易数据.
-     */
-    public void addDransaction(Map<String, String> map) throws ParseException {
-
-        //请求过来的数据暂时保存在缓存中
-        TransactionOrder transactionOrder = new TransactionOrder();
-        //https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1 详细字段解释参阅
-        transactionOrder.setOpenid(map.get("openid"));
-        transactionOrder.setIsSubscribe(map.get("is_subscribe"));
-
-        transactionOrder.setTradeType(map.get("trade_type"));
-
-        transactionOrder.setBankType(map.get("bank_type"));
-
-        transactionOrder.setFeeType(map.get("fee_type"));
-
-        transactionOrder.setTotalFee(Long.parseLong(map.get("total_fee")));
-
-        transactionOrder.setSettlementTotalFee(Long.parseLong(map.get("settlement_total_fee")));
-
-        transactionOrder.setCouponFee(Long.parseLong(map.get("coupon_fee")));
-
-        transactionOrder.setCashFeeType(map.get("cash_fee_type"));
-
-        transactionOrder.setCashFee(Long.parseLong(map.get("cash_fee")));
-
-        transactionOrder.setTransactionId(map.get("transaction_id"));
-
-        transactionOrder.setOutTradeNo(map.get("out_trade_no"));
-
-        transactionOrder.setUpdateTime(new Date());
-
-        transactionOrder.setAttach(map.get("attach"));
-
-        transactionOrder.setTimeEnd(DateUtils.parseDate(map.get("time_end"), "yyyyMMddHHmmss"));
-
-        transactionOrder.setPromotionDetail(map.get("promotion_detail"));
-
-        transactionOrder.setCommodityId(Long.parseLong(map.get("commodity_id")));
-
-        transactionOrder.setSpbillCreateIp(Long.parseLong(map.get("spbill_create_ip")));
-        transactionOrder.setIsReceipt("N");
-        transactionOrder.setUpdateBy("sysadmin");
-        transactionOrder.setCreateBy("sysadmin");
-
-        transactionOrderService.insertTransactionOrder(transactionOrder);
-    }
 
     //1、支付结果未知，调用订单查询api查询支付状态，然后在做出对应的处理
         /*SYSTEMERROR
@@ -404,10 +343,9 @@ public class WXPayServiceImpl implements IWXPayService {
 
 
     @Override
-    public String createOrderByNative(String json) {
-        //Map map = JSON.parseObject(json);
+    public String createOrderByNative(TransactionOrder transactionOrder) {
         //初始化配置
-        Config config =
+        /*Config config =
                 new RSAAutoCertificateConfig.Builder()
                         .merchantId(hqConfig.merchantId)
                         // 使用 com.wechat.pay.java.core.util 中的函数从本地文件中加载商户私钥，商户私钥会用来生成请求的签名
@@ -417,7 +355,7 @@ public class WXPayServiceImpl implements IWXPayService {
                         .build();
 
         // 初始化服务
-        NativePayService nativePayService = new NativePayService.Builder().config(config).build();
+        NativePayService nativePayService = new NativePayService.Builder().config(config).build();*/
 
         PrepayResponse res = new PrepayResponse();
 
@@ -427,18 +365,17 @@ public class WXPayServiceImpl implements IWXPayService {
         request.setAppid("wxd678efh567hg6787");
         //商户直连号
         request.setMchid("1230000109");
-        //商品描述
-        request.setDescription("便当-青椒肉丝套餐");
+        //商品描述 暂时使用备注字段
+        request.setDescription(transactionOrder.getRemark());
         //订单号
-        String outTradeNo = DateUtils.dateTimeDetailed();
-        request.setOutTradeNo(outTradeNo);
+        request.setOutTradeNo(transactionOrder.getOutTradeNo());
         //回掉接口
         request.setNotifyUrl("https://xxxx");
         //支付数据
         Amount amount = new Amount();
         //订单金额，分
-        amount.setTotal(100);
-        try {
+        amount.setTotal(transactionOrder.getOrderAmount());
+        /*try {
             res = nativePayService.prepay(request);
         } catch (HttpException e) { // 发送HTTP请求失败
             logger.error(e.getMessage(), e.getHttpRequest());
@@ -449,13 +386,18 @@ public class WXPayServiceImpl implements IWXPayService {
         } catch (MalformedMessageException e) { // 服务返回成功，返回体类型不合法，或者解析返回体失败
             logger.error(e.getMessage(), e.getMessage());
             // 调用e.getMessage()获取信息打印日志或上报监控，更多方法见MalformedMessageException定义
-        }
-        return res.getCodeUrl();
+        }*/
+        //创建订单信息
+
+        transactionOrderService.insertTransactionOrder(transactionOrder);
+        return "www.ssssss";
+        //支付二维码
+        //return res.getCodeUrl();
     }
 
     @Override
     public String paycallBack(HttpServletRequest request, HttpServletResponse response) throws IOException, GeneralSecurityException {
-        String characterEncoding = request.getCharacterEncoding();
+        /*String characterEncoding = request.getCharacterEncoding();
         System.out.println("characterEncoding=" + characterEncoding);
         //从请求头获取验签字段
         String Timestamp = request.getHeader("Wechatpay-Timestamp");
@@ -559,7 +501,11 @@ public class WXPayServiceImpl implements IWXPayService {
         Map map = new HashMap<>();
         //响应接口
         map.put("code", "SUCCESS");
-        map.put("message", "成功");
+        map.put("message", "成功");*/
+        TransactionOrder transactionOrder = new TransactionOrder();
+        transactionOrder.setOrderId(1L);
+        transactionOrder.setPayStatus("SUCCESS");
+        transactionOrderService.updateTransactionOrder(transactionOrder);
 
         //设置状态码
         response.setStatus(200);

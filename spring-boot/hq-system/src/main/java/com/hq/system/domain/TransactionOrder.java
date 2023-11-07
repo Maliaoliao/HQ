@@ -15,300 +15,157 @@ import java.util.Date;
  * @date 2022-12-27
  */
 public class TransactionOrder extends BaseEntity {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID=1L;
 
-    /**
-     * 订单ID
-     */
+    /** 订单ID */
+    /** 订单ID */
     private Long orderId;
 
-    /**
-     * 用户标识
-     */
-    @Excel(name = "用户标识")
-    private String openid;
+    /** 订单关联设备编号 */
+    @Excel(name = "订单关联设备编号")
+    private String orderNum;
 
-    /**
-     * 是否关注公众账号
-     */
-    @Excel(name = "是否关注公众账号")
-    private String isSubscribe;
-
-    /**
-     * 交易类型
-     */
-    @Excel(name = "交易类型")
-    private String tradeType;
-
-    /**
-     * 付款银行
-     */
-    @Excel(name = "付款银行")
-    private String bankType;
-
-    /**
-     * 货币类型
-     */
-    @Excel(name = "货币类型")
-    private String feeType;
-
-    /**
-     * 订单金额
-     */
+    /** 订单金额 */
     @Excel(name = "订单金额")
-    private Long totalFee;
+    private Integer orderAmount;
 
-    /**
-     * 应结订单金额
-     */
-    @Excel(name = "应结订单金额")
-    private Long settlementTotalFee;
+    /** 订单优惠金额 */
+    @Excel(name = "订单优惠金额")
+    private Long orderPreferentialAmount;
 
-    /**
-     * 代金券金额
-     */
-    @Excel(name = "代金券金额")
-    private Long couponFee;
+    /** 支付渠道 */
+    @Excel(name = "支付渠道")
+    private String paymenChannel;
 
-    /**
-     * 现金支付货币类型
-     */
-    @Excel(name = "现金支付货币类型")
-    private String cashFeeType;
+    /** 支付渠道唯一编码 */
+    @Excel(name = "支付渠道唯一编码")
+    private String paymenChannelId;
 
-    /**
-     * 现金支付金额
-     */
-    @Excel(name = "现金支付金额")
-    private Long cashFee;
+    /** $column.columnComment */
+    @Excel(name = "支付渠道唯一编码")
+    private String payStatus;
 
-    /**
-     * 微信支付订单号
-     */
-    @Excel(name = "微信支付订单号")
-    private String transactionId;
+    /** $column.columnComment */
+    @Excel(name = "支付渠道唯一编码")
+    private String payCode;
 
-    /**
-     * 商户订单号
-     */
+    /** $column.columnComment */
+    @Excel(name = "支付渠道唯一编码")
+    private Long productId;
+
+    /** $column.columnComment */
+    @Excel(name = "支付渠道唯一编码")
     private String outTradeNo;
 
-    /**
-     * 商家数据包
-     */
-    @Excel(name = "商家数据包")
-    private String attach;
-
-    /**
-     * 支付完成时间
-     */
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    @Excel(name = "支付完成时间", width = 30, dateFormat = "yyyy-MM-dd")
-    private Date timeEnd;
-
-    /**
-     * 营销详情
-     */
-    @Excel(name = "营销详情")
-    private String promotionDetail;
-
-    /**
-     * 商品ID
-     */
-    @Excel(name = "商品ID")
-    private Long commodityId;
-
-    /**
-     * 终端ID
-     */
-    @Excel(name = "终端ID")
-    private Long spbillCreateIp;
-
-    /**
-     * 订单是否开发票
-     */
-    @Excel(name = "订单是否开发票")
-    private String isReceipt;
-
-    public void setOrderId(Long orderId) {
+    public void setOrderId(Long orderId)
+    {
         this.orderId = orderId;
     }
 
-    public Long getOrderId() {
+    public Long getOrderId()
+    {
         return orderId;
     }
-
-    public void setOpenid(String openid) {
-        this.openid = openid;
+    public void setOrderNum(String orderNum)
+    {
+        this.orderNum = orderNum;
     }
 
-    public String getOpenid() {
-        return openid;
+    public String getOrderNum()
+    {
+        return orderNum;
+    }
+    public void setOrderAmount(Integer orderAmount)
+    {
+        this.orderAmount = orderAmount;
     }
 
-    public void setIsSubscribe(String isSubscribe) {
-        this.isSubscribe = isSubscribe;
+    public Integer getOrderAmount()
+    {
+        return orderAmount;
+    }
+    public void setOrderPreferentialAmount(Long orderPreferentialAmount)
+    {
+        this.orderPreferentialAmount = orderPreferentialAmount;
     }
 
-    public String getIsSubscribe() {
-        return isSubscribe;
+    public Long getOrderPreferentialAmount()
+    {
+        return orderPreferentialAmount;
+    }
+    public void setPaymenChannel(String paymenChannel)
+    {
+        this.paymenChannel = paymenChannel;
     }
 
-    public void setTradeType(String tradeType) {
-        this.tradeType = tradeType;
+    public String getPaymenChannel()
+    {
+        return paymenChannel;
+    }
+    public void setPaymenChannelId(String paymenChannelId)
+    {
+        this.paymenChannelId = paymenChannelId;
     }
 
-    public String getTradeType() {
-        return tradeType;
+    public String getPaymenChannelId()
+    {
+        return paymenChannelId;
+    }
+    public void setPayStatus(String payStatus)
+    {
+        this.payStatus = payStatus;
     }
 
-    public void setBankType(String bankType) {
-        this.bankType = bankType;
+    public String getPayStatus()
+    {
+        return payStatus;
+    }
+    public void setPayCode(String payCode)
+    {
+        this.payCode = payCode;
     }
 
-    public String getBankType() {
-        return bankType;
+    public String getPayCode()
+    {
+        return payCode;
+    }
+    public void setProductId(Long productId)
+    {
+        this.productId = productId;
     }
 
-    public void setFeeType(String feeType) {
-        this.feeType = feeType;
+    public Long getProductId()
+    {
+        return productId;
     }
-
-    public String getFeeType() {
-        return feeType;
-    }
-
-    public void setTotalFee(Long totalFee) {
-        this.totalFee = totalFee;
-    }
-
-    public Long getTotalFee() {
-        return totalFee;
-    }
-
-    public void setSettlementTotalFee(Long settlementTotalFee) {
-        this.settlementTotalFee = settlementTotalFee;
-    }
-
-    public Long getSettlementTotalFee() {
-        return settlementTotalFee;
-    }
-
-    public void setCouponFee(Long couponFee) {
-        this.couponFee = couponFee;
-    }
-
-    public Long getCouponFee() {
-        return couponFee;
-    }
-
-    public void setCashFeeType(String cashFeeType) {
-        this.cashFeeType = cashFeeType;
-    }
-
-    public String getCashFeeType() {
-        return cashFeeType;
-    }
-
-    public void setCashFee(Long cashFee) {
-        this.cashFee = cashFee;
-    }
-
-    public Long getCashFee() {
-        return cashFee;
-    }
-
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
-    }
-
-    public String getTransactionId() {
-        return transactionId;
-    }
-
-    public void setOutTradeNo(String outTradeNo) {
+    public void setOutTradeNo(String outTradeNo)
+    {
         this.outTradeNo = outTradeNo;
     }
 
-    public String getOutTradeNo() {
+    public String getOutTradeNo()
+    {
         return outTradeNo;
     }
 
-    public void setAttach(String attach) {
-        this.attach = attach;
-    }
-
-    public String getAttach() {
-        return attach;
-    }
-
-    public void setTimeEnd(Date timeEnd) {
-        this.timeEnd = timeEnd;
-    }
-
-    public Date getTimeEnd() {
-        return timeEnd;
-    }
-
-    public void setPromotionDetail(String promotionDetail) {
-        this.promotionDetail = promotionDetail;
-    }
-
-    public String getPromotionDetail() {
-        return promotionDetail;
-    }
-
-    public void setCommodityId(Long commodityId) {
-        this.commodityId = commodityId;
-    }
-
-    public Long getCommodityId() {
-        return commodityId;
-    }
-
-    public void setSpbillCreateIp(Long spbillCreateIp) {
-        this.spbillCreateIp = spbillCreateIp;
-    }
-
-    public Long getSpbillCreateIp() {
-        return spbillCreateIp;
-    }
-
-    public void setIsReceipt(String isReceipt) {
-        this.isReceipt = isReceipt;
-    }
-
-    public String getIsReceipt() {
-        return isReceipt;
-    }
-
     @Override
-    public String toString() {
-        return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
-                .append("orderId", getOrderId())
-                .append("openid", getOpenid())
-                .append("isSubscribe", getIsSubscribe())
-                .append("tradeType", getTradeType())
-                .append("bankType", getBankType())
-                .append("feeType", getFeeType())
-                .append("totalFee", getTotalFee())
-                .append("remark", getRemark())
-                .append("settlementTotalFee", getSettlementTotalFee())
-                .append("createBy", getCreateBy())
-                .append("couponFee", getCouponFee())
-                .append("createTime", getCreateTime())
-                .append("cashFeeType", getCashFeeType())
-                .append("updateBy", getUpdateBy())
-                .append("cashFee", getCashFee())
-                .append("updateTime", getUpdateTime())
-                .append("transactionId", getTransactionId())
-                .append("outTradeNo", getOutTradeNo())
-                .append("attach", getAttach())
-                .append("timeEnd", getTimeEnd())
-                .append("promotionDetail", getPromotionDetail())
-                .append("commodityId", getCommodityId())
-                .append("spbillCreateIp", getSpbillCreateIp())
-                .append("isReceipt", getIsReceipt())
+    public String toString(){
+        return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
+                .append("orderId",getOrderId())
+                .append("orderNum",getOrderNum())
+                .append("orderAmount",getOrderAmount())
+                .append("orderPreferentialAmount",getOrderPreferentialAmount())
+                .append("paymenChannel",getPaymenChannel())
+                .append("paymenChannelId",getPaymenChannelId())
+                .append("remark",getRemark())
+                .append("createBy",getCreateBy())
+                .append("createTime",getCreateTime())
+                .append("updateBy",getUpdateBy())
+                .append("updateTime",getUpdateTime())
+                .append("payStatus",getPayStatus())
+                .append("payCode",getPayCode())
+                .append("productId",getProductId())
+                .append("outTradeNo",getOutTradeNo())
                 .toString();
     }
 }

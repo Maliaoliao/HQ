@@ -57,7 +57,11 @@ public class TransactionOrderServiceImpl implements ITransactionOrderService {
      */
     @Override
     public int insertTransactionOrder(TransactionOrder transactionOrder) {
+        transactionOrder.setPayCode("www.xxx.payasdfasd");
+        transactionOrder.setUpdateTime(DateUtils.getNowDate());
         transactionOrder.setCreateTime(DateUtils.getNowDate());
+        transactionOrder.setUpdateBy("sysadmin");
+        transactionOrder.setCreateBy("sysadmin");
         return transactionOrderMapper.insertTransactionOrder(transactionOrder);
     }
 
@@ -70,6 +74,7 @@ public class TransactionOrderServiceImpl implements ITransactionOrderService {
     @Override
     public int updateTransactionOrder(TransactionOrder transactionOrder) {
         transactionOrder.setUpdateTime(DateUtils.getNowDate());
+        transactionOrder.setUpdateBy("updateadmin");
         return transactionOrderMapper.updateTransactionOrder(transactionOrder);
     }
 
@@ -99,7 +104,7 @@ public class TransactionOrderServiceImpl implements ITransactionOrderService {
     public int returnGoodsTransactionOrderById(TransactionOrder t) throws Exception {
 
         int res = -1;
-        Map<String, String> map = iwxPayService.orderRefund(t.getTransactionId(), t.getTotalFee(), t.getTotalFee(), "客户对餐品不满意");
+        /*Map<String, String> map = iwxPayService.orderRefund(t.getTransactionId(), t.getTotalFee(), t.getTotalFee(), "客户对餐品不满意");
         if("SUCCESS".equals(map.get("return_code"))){
             //退款成功，修改数据
             TransactionOrder transaction = new TransactionOrder();
@@ -108,7 +113,7 @@ public class TransactionOrderServiceImpl implements ITransactionOrderService {
             transaction.setRemark("客户对餐品不满意");
             res = transactionOrderMapper.updateTransactionOrder(transaction);
         }
-        System.out.println(res);
+        System.out.println(res);*/
         return res;
     }
 }
